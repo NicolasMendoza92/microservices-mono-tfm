@@ -1,20 +1,17 @@
-# models/recommendation_model.py
 
 from typing import List, Dict, Any
 from schemas.cv import ExtractedCVData
 
 # Simula la carga de tu modelo de clustering (K-Means, DBSCAN)
-# y la lista de posibles puestos
-# job_clusters = joblib.load("path/to/your/job_clusters.pkl")
-# job_titles_mapping = ...
 
-async def recommend_jobs(processed_cv_data: Dict[str, Any]) -> List[str]:
+async def recommend_jobs(processed_cv_data: ExtractedCVData) -> List[str]:
     """
     Recomienda puestos de trabajo basados en los datos extraídos del CV.
     """
-    skills = processed_cv_data.get("skills", [])
-    experience = processed_cv_data.get("experience", [])
-    summary = processed_cv_data.get("summary", "").lower()
+    # Corrección: Acceder a los atributos directamente con notación de punto
+    skills = processed_cv_data.skills if processed_cv_data.skills is not None else []
+    experience_items = processed_cv_data.experience if processed_cv_data.experience is not None else [] # Lista de ExperienceItem
+    summary = processed_cv_data.summary if processed_cv_data.summary else "" # Manejar Optional
     
     recommendations = []
 
@@ -33,9 +30,9 @@ async def recommend_jobs(processed_cv_data: Dict[str, Any]) -> List[str]:
         recommendations.append("Asistente Administrativo")
 
     # Lógica basada en experiencia
-    if any(exp["title"].lower() == "operario de línea" for exp in experience):
+    if any(exp["title"].lower() == "operario de línea" for exp in experience_items):
         recommendations.append("Operario de Fábrica")
-    if any(exp["title"].lower() == "mozo de almacén" for exp in experience):
+    if any(exp["title"].lower() == "mozo de almacén" for exp in experience_items):
         recommendations.append("Operador de Bodega")
 
     # Lógica basada en el resumen (palabras clave)

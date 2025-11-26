@@ -2,23 +2,18 @@
 
 from typing import List, Optional
 import random
+from schemas.cv import ExperienceItem
 
-# Simulación de un LLM. En un caso real, integrarías con Google Gemini, OpenAI GPT, etc.
-# from google.generativeai import GenerativeModel
-# model = GenerativeModel("gemini-pro") # Ejemplo con Gemini
 
 async def generate_interview_questions(
     candidate_name: str,
     skills: List[str],
-    experience: List[dict],
+    experience: List[ExperienceItem],
     areas_for_development: List[str],
     job_recommendations: List[str],
     num_questions: int = 5
 ) -> List[str]:
-    """
-    Genera preguntas de entrevista basadas en el perfil del candidato
-    y las recomendaciones de puestos.
-    """
+
     prompt_parts = [
         f"Genera {num_questions} preguntas de entrevista para el candidato {candidate_name}.",
         f"Sus habilidades clave son: {', '.join(skills)}.",
@@ -27,11 +22,6 @@ async def generate_interview_questions(
         f"Los roles recomendados incluyen: {', '.join(job_recommendations)}."
     ]
     prompt = " ".join(prompt_parts) + "\n\nLas preguntas deben ser relevantes para su perfil y los puestos sugeridos, y considerar sus posibles desafíos."
-
-    # --- SIMULACIÓN DEL LLM ---
-    # En un caso real harías:
-    # response = model.generate_content(prompt)
-    # questions = [part.text for part in response.parts] # O parsear el texto generado
 
     # Simulación de preguntas
     sample_questions = [

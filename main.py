@@ -48,23 +48,7 @@ async def read_root():
     }
 )
 
-@app.post(
-    "/process-cv",
-    response_model=CandidateSummary,
-    status_code=status.HTTP_202_ACCEPTED,
-    summary="Procesar CV y obtener resumen del candidato",
-    responses={
-        202: {"description": "CV recibido y procesamiento iniciado"},
-        400: {"model": ErrorResponse, "description": "Formato de archivo no soportado o error al procesar CV"},
-        500: {"model": ErrorResponse, "description": "Error interno del servidor"}
-    }
-)
 async def extract_cv_data_endpoint(file: UploadFile = File(...)):
-    """
-    Recibe un archivo CV (PDF, DOCX, TXT), extrae su texto
-    y luego utiliza un modelo PLN (Hugging Face) para estructurar
-    la información clave. Estos datos son para revisión del usuario.
-    """
     candidate_id = str(uuid4()) # Usamos este ID para el seguimiento
 
     if not file.filename:
@@ -120,24 +104,15 @@ async def extract_cv_data_endpoint(file: UploadFile = File(...)):
     }
 )
 async def process_candidate_data_endpoint(candidate_data: ExtractedCVData):
-    """
-    Recibe la información estructurada de un CV (que ha sido revisada/aprobada
-    por el usuario), la utiliza para predecir la empleabilidad,
-    recomendar puestos y generar preguntas de entrevista.
-    """
     # Usamos el ID de los datos extraídos como ID del candidato para el summary
     candidate_id = candidate_data.id
 
     try:
-        # Asegúrate de que los datos extraídos estén en un formato que tus modelos esperan.
-        # Puede que necesites una función de mapeo/transformación aquí.
-        
         # 1. Evaluación de empleabilidad (Microservicio 2)
-        # El modelo de empleabilidad necesita los datos en un formato específico
-        employability_results = await predict_employability(candidate_data.dict())
+        employability_results = await predict_employability(candidate_data)
 
         # 2. Recomendación de puestos (Microservicio 3)
-        job_recommendations = await recommend_jobs(candidate_data.dict())
+        job_recommendations = await recommend_jobs(candidate_data)
 
         # 3. Microservicio opcional: Preparación de entrevista
         interview_questions = await generate_interview_questions(

@@ -1,5 +1,3 @@
-# schemas/cv.py
-
 from pydantic import BaseModel
 from typing import List, Optional
 
@@ -20,10 +18,7 @@ class LanguageItem(BaseModel):
     level: str
 
 class ExtractedCVData(BaseModel):
-    """
-    Representa la información extraída de un CV por el microservicio PLN.
-    """
-    id: str # Debería ser el ID del archivo o del candidato
+    id: str 
     name: Optional[str] = None
     email: Optional[str] = None
     phone: Optional[str] = None
@@ -31,5 +26,5 @@ class ExtractedCVData(BaseModel):
     education: List[EducationItem] = []
     skills: List[str] = []
     languages: List[LanguageItem] = []
-    summary: Optional[str] = None # Resumen profesional o descripción breve
-    raw_text: Optional[str] = None # Texto completo extraído (útil para debug o otros modelos)
+    summary: Optional[str] = None
+    raw_text: Optional[str] = None 
