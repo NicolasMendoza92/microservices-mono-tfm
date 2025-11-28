@@ -9,9 +9,8 @@ import datetime
 from config import add_cors_middleware
 from schemas.cv import ExtractedCVData
 from schemas.candidate import CandidateSummary, CVProcessedData, ErrorResponse
-from utils.file_handler import save_upload_file, UPLOAD_DIR
-# from models.cv_processing import process_cv_with_huggingface_ner as process_cv_with_pln # Renombrar para no cambiar las llamadas
-from models.cv_processing import extract_text_from_file, extract_cv_data_from_text # Nuevas funciones del PLN
+from utils.file_handler import save_upload_file
+from models.cv_processing import extract_text_from_file, extract_cv_data_from_text
 from models.employability_model import predict_employability
 from models.recommendation_model import recommend_jobs
 from models.interview_prep import generate_interview_questions # Opcional
@@ -71,7 +70,7 @@ async def extract_cv_data_endpoint(file: UploadFile = File(...)):
         raw_text = await extract_text_from_file(file_location)
         
         # Llama a la nueva función de extracción y estructuración
-        extracted_data = await extract_cv_data_from_text(raw_text, candidate_id)
+        extracted_data = await extract_cv_data_from_text(raw_text, candidate_id, file.filename)
         
         # Guarda los datos extraídos para posible recuperación o para el siguiente paso
         extracted_data_db[candidate_id] = extracted_data

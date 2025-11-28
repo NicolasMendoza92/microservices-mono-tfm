@@ -1,16 +1,18 @@
 # models/cv_processing.py
 
 import os
-import fitz # PyMuPDF para PDFs
-from docx import Document # python-docx para .docx
+import fitz 
+from docx import Document 
 from transformers import pipeline
-from typing import List, Optional
+from typing import List, Optional, Dict
 import re
 import datetime
 from schemas.cv import ExtractedCVData, ExperienceItem, EducationItem, LanguageItem
-from utils.dates_handler import parse_dates
+from utils.auxiliar import parse_dates, normalize_job_title, DATE_PATTERN, DATE_SINGLE_POINT_PATTERN
+import logging
 
-
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 # --- Cargar el modelo de Hugging Face para NER ---
 NER_MODEL_NAME = "dccuchile/bert-base-spanish-wwm-uncased-finetuned-ner"
 ner_pipeline = pipeline("ner", model=NER_MODEL_NAME, tokenizer=NER_MODEL_NAME, aggregation_strategy="simple")
@@ -45,42 +47,16 @@ async def extract_text_from_file(file_path: str) -> str:
 
     return text
 
-STANDARD_JOB_TITLES = {
-    "desarrollador de software": ["desarrollador", "programador", "ingeniero de software", "software engineer", "fullstack", "backend", "frontend"],
-    "analista de datos": ["científico de datos", "data analyst", "data scientist", "especialista en datos"],
-    "gerente de proyectos": ["project manager", "jefe de proyectos", "coordinador de proyectos"],
-    "asistente administrativo": ["secretario", "auxiliar administrativo", "administrativo"],
-    "operario de producción": ["operario", "obrero", "trabajador de fábrica", "producción"],
-    "marketing y ventas": ["asesor comercial", "ejecutivo de ventas", "vendedor", "sales representative","marketing","comercial","promotor","vendedor"],
-    "atención al cliente": ["call center", "soporte técnico", "servicio al cliente"],
-    "contable": ["contabilidad", "auxiliar contable", "contable", "analista contable"],
-    "logística": ["logístico", "operador logístico", "almacén", "inventario", "supply chain", "logística","almacén","operario","carretillero","inventario","supply chain","mozo"],
-    "recursos humanos": ["rrhh", "gestor de talento", "recruitment", "seleccionador"],
-    "hostelería": ["camarero","chef","cocinero","azafata","acomodador","maletero"],
-    "salud": ["médico","enfermero","fisioterapeuta","farmacia","psicólogo","clínica","gerocultor"],
-    "construcción": ["albañil","aparejador","arquitecto","fontanero","electricista","carpintero","pintor"],
-    "educación": ["profesor","educador","formador","orientador","monitor"],
-    "tecnología y diseño": ["informática","datos","multimedia","diseñador","diseño gráfico","ux/ui","autocad","solidworks","mantenimiento"],
-    "construcción": ["albañil","aparejador","arquitecto","fontanero","electricista","carpintero","pintor"],
-    "servicios": ["atención al cliente","recepcionista","secretaria","teleoperador","telemarketing"],
-    "transporte": [ "conductor","mensajero","repartidor","transporte","grúa","parking"],
-    "alimentación": ["alimentos","carnicero","charcutero","frutero","panadero","pescadero"],
-    "seguridad": ["vigilante","seguridad","socorrista"],
-    "hogar y limpieza": ["empleada hogar","limpiador","lavandería","planchador"],
-    "jurídico": ["abogado","asesor jurídico","notario","procurador"],
-    "otros": ["actor","acomodador","intérprete","traductor","funerario"]
-}
 
-def normalize_job_title(title: str) -> str:
-    """Normaliza un título de trabajo a un estándar si encuentra una coincidencia."""
-    title_lower = title.lower()
-    for standard_title, variations in STANDARD_JOB_TITLES.items():
-        if title_lower == standard_title or any(var in title_lower for var in variations):
-            return standard_title.title() # Retorna el estándar capitalizado
-    return title.title()
+async def extract_cv_data_from_text(raw_text: str, file_id: str, file_name: str) -> ExtractedCVData:
 
-async def extract_cv_data_from_text(raw_text: str, file_id: str) -> ExtractedCVData:
-
+     # *** AÑADIR ESTO TEMPORALMENTE PARA DEBUGGING ***
+    logger.info("--- RAW TEXT ---")
+    logger.info(raw_text[:1000]) # Imprimir los primeros 1000 caracteres para no saturar
+    logger.info("--- NER RESULTS FROM HUGGING FACE (RAW) ---")
+    ner_results = ner_pipeline(raw_text)
+    # *************************************************
+    
     ner_results = ner_pipeline(raw_text)
 
     # Inicializar con valores por defecto
@@ -95,9 +71,13 @@ async def extract_cv_data_from_text(raw_text: str, file_id: str) -> ExtractedCVD
     
     # Normalizar el texto para facilitar la detección de secciones
     normalized_text = raw_text.lower().replace('\n', ' ').replace('\r', ' ')
+    
+     # --- Pre-procesamiento del texto ---
+    clean_text = re.sub(r'\s*\n\s*', '\n', raw_text.strip()) 
+    clean_text = re.sub(r'[ \t]+', ' ', clean_text) 
+    logger.info(f"TEXTO LIMPIO: /n {clean_text}")
 
     # --- 1. Extracción de Nombre (Prioridad: Principio del documento, NER) ---
-    # Intenta encontrar el nombre en las primeras líneas/párrafos
     first_lines = raw_text.split('\n')[:5] # Primeras 5 líneas
     if first_lines:
         # Intenta un regex para nombres comunes al inicio
@@ -119,7 +99,44 @@ async def extract_cv_data_from_text(raw_text: str, file_id: str) -> ExtractedCVD
                 break
         if not name and person_entities:
             name = person_entities[0].title() 
-            
+    
+    if not name:
+    # Obtener solo el nombre del archivo (sin ruta ni extensión)
+        filename = os.path.splitext(os.path.basename(file_name))[0].lower()
+        # *** REGEX MÁS INTELIGENTE: Elimina sufijos comunes PEGADOS ***
+        filename_clean = re.sub(
+            r'_(cv|curriculum|resume|ok|final|ult|version|v\d+|doc|file)$', 
+            '', 
+            filename
+        )
+        # También elimina sufijos con guión
+        filename_clean = re.sub(
+            r'-(cv|curriculum|resume|ok|final|ult|version|v\d+|doc|file)$', 
+            '', 
+            filename_clean
+        )
+    
+        # Palabras a eliminar (case insensitive)
+        words_to_remove = {
+            'cv', 'curriculum', 'currículum', 'resume', 'resumé', 
+            'documento', 'archivo', 'file', 'doc', 'vitae', 
+            'version', 'v.', 'v1', 'v2', 'v3', 'ok', 
+            '2023', '2024', '2025', '2026', 
+            '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', # Meses
+            'final', 'ultima', 'ultimo', 'latest'
+        }
+        
+        words = filename_clean.split()
+        cleaned_words = []
+        for word in words:
+            if word not in words_to_remove and len(word) > 1:  # Ignorar palabras de 1 letra
+                cleaned_words.append(word.title())
+        
+        if len(cleaned_words) >= 2:
+            name = ' '.join(cleaned_words[:4])  # Máximo 4 palabras
+        elif len(cleaned_words) == 1 and len(cleaned_words[0]) > 2:
+            name = cleaned_words[0]
+                 
     # 2. Extracción de Email (regex)
     email_match = re.search(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', raw_text)
     if email_match:
@@ -254,15 +271,6 @@ async def extract_cv_data_from_text(raw_text: str, file_id: str) -> ExtractedCVD
             if len(degree.strip()) > 5 and len(institution.strip()) > 5:
                 education.append(EducationItem(degree=degree.strip(), institution=institution.strip(), year=year))
 
-
-    # # 5. Extracción de Experiencia Laboral y Educación
-    # experience_matches = re.findall(r'(?i)(?P<title>[A-ZÁÉÍÓÚ\s,]+)\s+en\s+(?P<company>[A-ZÁÉÍÓÚ\s,]+)(?:\s+\((\d{4}(?:\s*-\s*\d{4})?|\d+\s+años?))\)?', raw_text)
-    
-
-
-    # # Educación
-    # # Patrón simplificado: (Grado) de (Institución) (Año)
-    # education_matches = re.findall(r'(?i)(?P<degree>[A-ZÁÉÍÓÚ\s,]+)(?:\s+(?:en|de))?\s+(?P<institution>[A-ZÁÉÍÓÚ\s,]+)(?:\s+\((\d{4}))\)?', raw_text)
     
     # 6. Extracción de Idiomas (keywords + nivel)
     # Podrías buscar patrones como "Idioma: Nivel" o "Nivel Idioma"
@@ -306,16 +314,6 @@ async def extract_cv_data_from_text(raw_text: str, file_id: str) -> ExtractedCVD
                     break
             if not summary and len(paragraphs[0].split()) > 10:
                 summary = paragraphs[0]
-    # paragraphs = [p.strip() for p in raw_text.split('\n') if p.strip()]
-    # if paragraphs:
-    #     # Intenta encontrar un párrafo largo que no sea una lista o info de contacto
-    #     for p in paragraphs:
-    #         if len(p.split()) > 20 and not re.search(r'^\s*•|\d+\.\s*', p): # Más de 20 palabras, no una lista
-    #             summary = p
-    #             break
-    #     if not summary and len(paragraphs[0].split()) > 10: # Si no encuentra, usa el primer párrafo si es razonablemente largo
-    #         summary = paragraphs[0]
-
 
     # Construir el objeto ExtractedCVData
     extracted_data = ExtractedCVData(
@@ -332,4 +330,3 @@ async def extract_cv_data_from_text(raw_text: str, file_id: str) -> ExtractedCVD
     )
 
     return extracted_data
-

@@ -17,7 +17,7 @@ async def generate_interview_questions(
     prompt_parts = [
         f"Genera {num_questions} preguntas de entrevista para el candidato {candidate_name}.",
         f"Sus habilidades clave son: {', '.join(skills)}.",
-        f"Tiene experiencia en: {', '.join([exp['title'] for exp in experience]) if experience else 'ninguna reportada'}.",
+        f"Tiene experiencia en: {', '.join([exp.title for exp in experience]) if experience else 'ninguna reportada'}.",
         f"Las áreas de desarrollo sugeridas son: {', '.join(areas_for_development) if areas_for_development else 'ninguna'}.",
         f"Los roles recomendados incluyen: {', '.join(job_recommendations)}."
     ]

@@ -8,14 +8,13 @@ async def recommend_jobs(processed_cv_data: ExtractedCVData) -> List[str]:
     """
     Recomienda puestos de trabajo basados en los datos extraídos del CV.
     """
-    # Corrección: Acceder a los atributos directamente con notación de punto
     skills = processed_cv_data.skills if processed_cv_data.skills is not None else []
     experience_items = processed_cv_data.experience if processed_cv_data.experience is not None else [] # Lista de ExperienceItem
     summary = processed_cv_data.summary if processed_cv_data.summary else "" # Manejar Optional
     
     recommendations = []
 
-    # Lógica basada en habilidades
+     # Lógica basada en habilidades
     if any(s.lower() in ["python", "javascript", "sql", "machine learning"] for s in skills):
         recommendations.append("Desarrollador de Software")
         recommendations.append("Analista de Datos")
@@ -30,9 +29,10 @@ async def recommend_jobs(processed_cv_data: ExtractedCVData) -> List[str]:
         recommendations.append("Asistente Administrativo")
 
     # Lógica basada en experiencia
-    if any(exp["title"].lower() == "operario de línea" for exp in experience_items):
+    # CORRECCIÓN: Usar 'exp.title' en lugar de 'exp["title"]'
+    if any(exp.title.lower() == "operario de línea" for exp in experience_items):
         recommendations.append("Operario de Fábrica")
-    if any(exp["title"].lower() == "mozo de almacén" for exp in experience_items):
+    if any(exp.title.lower() == "mozo de almacén" for exp in experience_items):
         recommendations.append("Operador de Bodega")
 
     # Lógica basada en el resumen (palabras clave)
