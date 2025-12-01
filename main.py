@@ -1,7 +1,7 @@
 # main.py
 
 from fastapi import FastAPI, UploadFile, File, HTTPException, status
-from typing import Dict, Any, List
+from typing import Dict
 from uuid import uuid4
 import os
 import datetime
@@ -13,7 +13,8 @@ from utils.file_handler import save_upload_file
 from models.cv_processing import extract_text_from_file, extract_cv_data_from_text
 from models.employability_model import predict_employability
 from models.recommendation_model import recommend_jobs
-from models.interview_prep import generate_interview_questions # Opcional
+from models.interview_prep import generate_interview_questions 
+
 
 app = FastAPI(
     title="T3 Chat - API de Inclusión Laboral",
@@ -24,8 +25,6 @@ app = FastAPI(
 # Añadir el middleware CORS
 add_cors_middleware(app)
 
-# Variable para almacenar los datos procesados de los candidatos (para este ejemplo simple)
-# En un entorno real, esto iría a una base de datos.
 processed_candidates_db: Dict[str, CVProcessedData] = {}
 extracted_data_db: Dict[str, ExtractedCVData] = {}
 candidate_summaries_db: Dict[str, CandidateSummary] = {}
@@ -48,7 +47,7 @@ async def read_root():
 )
 
 async def extract_cv_data_endpoint(file: UploadFile = File(...)):
-    candidate_id = str(uuid4()) # Usamos este ID para el seguimiento
+    candidate_id = str(uuid4()) 
 
     if not file.filename:
         raise HTTPException(
@@ -164,5 +163,3 @@ async def get_candidate_summary(candidate_id: str):
             detail=f"Candidato con ID '{candidate_id}' no encontrado."
         )
     return summary
-
-# Para ejecutar: uvicorn main:app --reload

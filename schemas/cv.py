@@ -3,15 +3,11 @@ from typing import List, Optional
 
 class ExperienceItem(BaseModel):
     title: str
-    company: str
     years: int
-    # Puedes añadir start_date: Optional[str], end_date: Optional[str], description: Optional[str] etc.
 
 class EducationItem(BaseModel):
     degree: str
-    institution: str
     year: Optional[int]
-    # Puedes añadir start_date: Optional[str], end_date: Optional[str] etc.
 
 class LanguageItem(BaseModel):
     name: str
