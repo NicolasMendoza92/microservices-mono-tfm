@@ -14,33 +14,28 @@ MONTHS = [
 MONTHS_PATTERN = r"(?:{})\.?".format("|".join(MONTHS))
 
 DATE_SINGLE_POINT_PATTERN = rf"""
-    (?P<month>{MONTHS_PATTERN})\s+(?P<year>\d{{4}})        # Mes con texto + año
+    (?P<month>{MONTHS_PATTERN})\s+(?P<year>\d{4})
     |
-    (?P<month_num>\d{{1,2}})/(?P<year_num>\d{{4}})         # Mes numérico + año, ej: 12/2023
+    (?P<month_num>\d{1,2})\s*/\s*(?P<year_num>\d{4})
     |
-    (?P<year_only>\d{{4}})                                 # Solo año
+    (?P<year_only>\d{4})
     |
-    (?P<presente>presente|actualidad|hoy)                  # Presente
+    (?P<presente>presente|actualidad|hoy)
 """
 
 DATE_RANGE_PATTERN = rf"""
     (?P<start>
-        {MONTHS_PATTERN}\s+\d{{4}}                          # Mes texto + año inicio
-        |
-        \d{{1,2}}/\d{{4}}                                   # Mes numérico + año inicio
-        |
-        \d{{4}}                                             # Año inicio
+        {MONTHS_PATTERN}\s+\d{{4}} |
+        \d{{1,2}}\s*/\s*\d{{4}} |
+        \d{{4}}
     )
-    \s*[-–—]\s*                                            # Separador - o similar
+    \s*(?:-|–|—|al|a|hasta)\s*
     (?P<end>
-        {MONTHS_PATTERN}\s+\d{{4}}                          # Mes texto + año fin
-        |
-        \d{{1,2}}/\d{{4}}                                   # Mes numérico + año fin
-        |
-        \d{{4}}                                             # Año fin
-        |
-        presente|actualidad|hoy                              # Palabras para actualidad
-    )
+        {MONTHS_PATTERN}\s+\d{{4}} |
+        \d{{1,2}}\s*/\s*\d{{4}} |
+        \d{{4}} |
+        presente|actualidad|hoy
+    )\.?
 """
 
 DATE_SINGLE_POINT_REGEX = re.compile(DATE_SINGLE_POINT_PATTERN, re.VERBOSE | re.IGNORECASE)

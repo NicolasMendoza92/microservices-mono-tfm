@@ -1,4 +1,3 @@
-import joblib
 from typing import List, Dict, Any
 from schemas.cv import ExtractedCVData
 

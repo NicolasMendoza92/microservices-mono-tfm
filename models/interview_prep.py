@@ -1,6 +1,6 @@
 # models/interview_prep.py
 
-from typing import List, Optional
+from typing import List
 import random
 from schemas.cv import ExperienceItem
 
@@ -22,7 +22,7 @@ async def generate_interview_questions(
         f"Los roles recomendados incluyen: {', '.join(job_recommendations)}."
     ]
     prompt = " ".join(prompt_parts) + "\n\nLas preguntas deben ser relevantes para su perfil y los puestos sugeridos, y considerar sus posibles desafíos."
-
+    print(prompt)
     # Simulación de preguntas
     sample_questions = [
         f"Háblame de un momento en que usaste tu habilidad de {random.choice(skills)}.",

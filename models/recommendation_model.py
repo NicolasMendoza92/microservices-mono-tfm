@@ -1,5 +1,5 @@
 
-from typing import List, Dict, Any
+from typing import List
 from schemas.cv import ExtractedCVData
 
 # Simula la carga de tu modelo de clustering (K-Means, DBSCAN)

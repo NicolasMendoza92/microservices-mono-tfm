@@ -68,7 +68,7 @@ async def extract_cv_data_endpoint(file: UploadFile = File(...)):
         file_location = await save_upload_file(file)
         raw_text = await extract_text_from_file(file_location)
         
-        # Llama a la nueva función de extracción y estructuración
+        # despues de que saca la info con hugging NER envio el texto plano a esta funcion
         extracted_data = await extract_cv_data_from_text(raw_text, candidate_id, file.filename)
         
         # Guarda los datos extraídos para posible recuperación o para el siguiente paso
