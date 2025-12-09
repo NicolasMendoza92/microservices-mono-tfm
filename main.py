@@ -5,7 +5,6 @@ from typing import Dict
 from uuid import uuid4
 import os
 import datetime
-
 from config import add_cors_middleware
 from schemas.cv import ExtractedCVData
 from schemas.candidate import CandidateSummary, CVProcessedData, ErrorResponse
