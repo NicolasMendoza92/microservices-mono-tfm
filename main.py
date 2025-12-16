@@ -14,7 +14,7 @@ from models.cv_processing import extract_text_from_file, extract_cv_data_from_te
 from models.employability_model import predict_employability
 from models.recommendation_model import recommend_jobs
 from models.interview_prep import generate_interview_questions 
-from models.cv_summarizer import summarize_scv
+from models.cv_summarizer import summarize_cv
 
 
 app = FastAPI(
@@ -150,7 +150,7 @@ class SummarizeRequest(BaseModel):
 @app.post("/summarize-cv") 
 def summarize_endpoint(req: SummarizeRequest):
     print(f'Received summarize request for text length: {len(req.raw_text)}')  # Corregí len()
-    summary = summarize_scv(req.raw_text)
+    summary = summarize_cv(req.raw_text)
     return {"summary": summary}
 
 

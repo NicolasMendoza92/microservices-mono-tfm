@@ -3,7 +3,7 @@ import torch
 from typing import Optional
 
 # Configuración global del modelo (se carga una sola vez)
-_model_name = "mrm8488/bert2bert_shared-spanish-finetuned-summarization"
+_model_name = "PlanTL-GOB-ES/bsc-bart-large-es"
 _tokenizer = None
 _model = None
 _summarizer = None
@@ -28,21 +28,9 @@ def initialize_summarizer():
     
     return _summarizer
 
-def summarize_scv(raw_text: str, max_length: int = 150, chunk_size: int = 1000) -> str:
-    """
-    Genera resumen de CV en español.
-    
-    Args:
-        raw_text: Texto plano del CV
-        max_length: Longitud máxima por chunk
-        chunk_size: Tamaño de chunk en caracteres
-    
-    Returns:
-        Resumen concatenado y limpio
-    """
+def summarize_cv(raw_text: str, max_length: int = 120, chunk_size: int = 1000) -> str:
     # Inicializa si no está cargado
     summarizer = initialize_summarizer()
-    
     # Divide en chunks para textos largos de CV
     chunks = [raw_text[i:i+chunk_size] for i in range(0, len(raw_text), chunk_size)]
     summaries = []
@@ -51,7 +39,12 @@ def summarize_scv(raw_text: str, max_length: int = 150, chunk_size: int = 1000) 
         print(f"Procesando chunk {i+1}/{len(chunks)} ({len(chunk)} chars)")
         
         # Prompt optimizado para CVs
-        prompt = f"Resumir profesionalmente este CV: {chunk.strip()}"
+        prompt = (
+            "Resume de forma profesional este CV. "
+            "Mantén nombres, fechas y empleadores sin modificar. "
+            "No inventes información. "
+            f"Texto: {chunk}"
+        )
         
         try:
             result = summarizer(
@@ -59,7 +52,7 @@ def summarize_scv(raw_text: str, max_length: int = 150, chunk_size: int = 1000) 
                 max_length=max_length, 
                 min_length=40, 
                 do_sample=False,
-                truncation=True
+                num_beams=4,
             )[0]['summary_text']
             summaries.append(result)
         except Exception as e:
