@@ -7,7 +7,7 @@ from pydantic import BaseModel
 import os
 import datetime
 from config import add_cors_middleware
-from schemas.cv import ExtractedCVData
+from schemas.cv import ExtractedCVData, CandidateData
 from schemas.candidate import CandidateSummary, CVProcessedData, ErrorResponse
 from utils.file_handler import save_upload_file
 from models.cv_processing import extract_text_from_file, extract_cv_data_from_text
@@ -102,7 +102,7 @@ async def extract_cv_data_endpoint(file: UploadFile = File(...)):
         500: {"model": dict, "description": "Error interno del servidor"}
     }
 )
-async def process_candidate_data_endpoint(candidate_data: ExtractedCVData):
+async def process_candidate_data_endpoint(candidate_data: CandidateData):
     # Usamos el ID de los datos extraídos como ID del candidato para el summary
     candidate_id = candidate_data.id
 
