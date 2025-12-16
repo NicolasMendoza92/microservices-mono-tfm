@@ -24,3 +24,26 @@ class ExtractedCVData(BaseModel):
     languages: List[LanguageItem] = []
     summary: Optional[str] = None
     raw_text: Optional[str] = None 
+
+class CandidateData(BaseModel):
+    id: str
+    name: str
+    summary: Optional[str] = None
+    experience: List[ExperienceItem] = []
+    education: List[EducationItem] = []
+    skills: List[str] = []
+    languages: List[LanguageItem] = []
+    gender: Optional[str] = None     
+    age: Optional[int] = None
+    maritalStatus: Optional[str] = None
+    birthCountry: Optional[str] = None
+    numLanguages: Optional[int] = None
+    hasCar: Optional[bool] = None
+    criminalRecord: Optional[bool] = None
+    restrainingOrder: Optional[bool] = None
+    numChildren: Optional[int] = None
+    workDisability: Optional[bool] = None
+    disabilityFlag: Optional[bool] = None
+    jobSeeker: Optional[bool] = None
+    weaknesses: Optional[str] = None
+    trainingProfile: Optional[str] = None
