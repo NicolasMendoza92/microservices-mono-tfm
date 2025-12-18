@@ -3,10 +3,12 @@ from typing import List, Optional
 
 class ExperienceItem(BaseModel):
     title: str
+    company: Optional[str] = None
     years: int
 
 class EducationItem(BaseModel):
     degree: str
+    institution:Optional[str] = None
     year: Optional[int]
 
 class LanguageItem(BaseModel):
@@ -14,7 +16,6 @@ class LanguageItem(BaseModel):
     level: str
 
 class ExtractedCVData(BaseModel):
-    id: str 
     name: Optional[str] = None
     email: Optional[str] = None
     phone: Optional[str] = None

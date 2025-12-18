@@ -557,7 +557,6 @@ async def extract_cv_data_from_text(
 
     # Construir el objeto ExtractedCVData
     extracted_data = ExtractedCVData(
-        id=file_id,
         name=name,
         email=email,
         phone=phone,
