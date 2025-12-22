@@ -1,12 +1,10 @@
-# models/employability_model.py
-
 import os
 import joblib
-import pandas as pd  # Necesitamos pandas para el feature engineering
+import pandas as pd  
 import unicodedata
 from rapidfuzz import process
 from sklearn.preprocessing import MultiLabelBinarizer
-from typing import List, Dict, Any, Optional  # Optional para el modelo y features
+from typing import List, Dict, Any, Optional  
 from schemas.cv import CandidateData
 from utils.tags import etiquetas
 
@@ -59,7 +57,6 @@ except Exception as e:
 
 # --- REPLICACIÓN DE FUNCIONES DE PREPROCESAMIENTO DEL CUADERNO ---
 
-
 # Normalizador
 def normalizar(texto: str) -> str:
     texto = texto.lower()
@@ -78,7 +75,6 @@ def obtener_terminos_unicos_de_string(text_data: str) -> List[str]:
         vocab.add(normalizar(item))
     return list(vocab)
 
-
 # 2. Precalcular matches (usamos el mismo del cuaderno)
 def precalcular_diccionario(
     vocabulario: List[str], etiquetas_set: set, threshold: int = 70
@@ -93,7 +89,6 @@ def precalcular_diccionario(
             diccionario_match[termino] = match
     return diccionario_match
 
-
 # 3. Aplicar mapeo usando el diccionario (igual al del cuaderno)
 def estandarizar_entrada(
     texto: Optional[str], diccionario: Dict[str, str]
@@ -106,11 +101,7 @@ def estandarizar_entrada(
         etiquetas_detectadas.add(diccionario.get(item_norm, "Desconocido"))
     return list(etiquetas_detectadas)
 
-
 # --- REPLICACIÓN DE LAS ETIQUETAS DEL CUADERNO ---
-# Estas son tus categorías predefinidas
-
-
 
 # --- FUNCIÓN CRÍTICA: _transform_data_for_employability_model ---
 def _transform_data_for_employability_model(

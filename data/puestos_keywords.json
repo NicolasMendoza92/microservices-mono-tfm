@@ -1,0 +1,3338 @@
+[
+  {
+    "id": 1,
+    "puesto": "Peón",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "almacen",
+      "logistica",
+      "transporte",
+      "reparto",
+      "inventario"
+    ]
+  },
+  {
+    "id": 2,
+    "puesto": "Electricidad",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 3,
+    "puesto": "Camarero",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "camarero",
+      "hosteleria",
+      "bar",
+      "restaurante",
+      "servicio"
+    ]
+  },
+  {
+    "id": 4,
+    "puesto": "Limpiador",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpiador",
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento"
+    ]
+  },
+  {
+    "id": 5,
+    "puesto": "Ayudante de cocina",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "ayudante",
+      "apoyo",
+      "tarea",
+      "servicio",
+      "oficio"
+    ]
+  },
+  {
+    "id": 6,
+    "puesto": "camarera de piso",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 7,
+    "puesto": "Recepción Hotel",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "recepcion",
+      "hotel",
+      "cliente",
+      "atencion",
+      "hosteleria"
+    ]
+  },
+  {
+    "id": 8,
+    "puesto": "Teleoperador",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "teleoperador",
+      "callcenter",
+      "telefono",
+      "cliente",
+      "atencion"
+    ]
+  },
+  {
+    "id": 9,
+    "puesto": "Controlador ORA",
+    "categoria": "Seguridad y Vigilancia",
+    "keywords": [
+      "seguridad",
+      "vigilancia",
+      "control",
+      "acceso",
+      "guardia"
+    ]
+  },
+  {
+    "id": 10,
+    "puesto": "Gerocultor",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "gerocultor",
+      "residencia",
+      "mayor",
+      "cuidado",
+      "sanidad"
+    ]
+  },
+  {
+    "id": 11,
+    "puesto": "Fontaneria",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "fontaneria",
+      "tuberia",
+      "agua",
+      "instalacion",
+      "reparacion"
+    ]
+  },
+  {
+    "id": 12,
+    "puesto": "Mecanico",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mecanico",
+      "motor",
+      "vehiculo",
+      "reparacion",
+      "taller"
+    ]
+  },
+  {
+    "id": 13,
+    "puesto": "Mozo de almacén",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "mozo",
+      "almacen",
+      "logistica",
+      "picking",
+      "inventario"
+    ]
+  },
+  {
+    "id": 14,
+    "puesto": "Vigilante de Seguridad",
+    "categoria": "Seguridad y Vigilancia",
+    "keywords": [
+      "vigilante",
+      "seguridad",
+      "control",
+      "acceso",
+      "guardia"
+    ]
+  },
+  {
+    "id": 15,
+    "puesto": "Secretaria",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "secretaria",
+      "oficina",
+      "administracion",
+      "gestion",
+      "documentacion"
+    ]
+  },
+  {
+    "id": 16,
+    "puesto": "Maquinas almacén",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "almacen",
+      "logistica",
+      "transporte",
+      "reparto",
+      "inventario"
+    ]
+  },
+  {
+    "id": 17,
+    "puesto": "Conductor autobús",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "conductor",
+      "transporte",
+      "vehiculo",
+      "ruta",
+      "reparto"
+    ]
+  },
+  {
+    "id": 18,
+    "puesto": "Aux. administrativo",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "documentacion",
+      "contabilidad"
+    ]
+  },
+  {
+    "id": 19,
+    "puesto": "Oficial 1ª",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "oficial",
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion"
+    ]
+  },
+  {
+    "id": 20,
+    "puesto": "Jefe de obra",
+    "categoria": "Construcción y Obra",
+    "keywords": [
+      "construccion",
+      "obra",
+      "reforma",
+      "edificacion",
+      "proyecto"
+    ]
+  },
+  {
+    "id": 21,
+    "puesto": "Oficial 2ª",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "oficial",
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion"
+    ]
+  },
+  {
+    "id": 22,
+    "puesto": "Carpintero",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "carpintero",
+      "madera",
+      "taller",
+      "montaje",
+      "fabricacion"
+    ]
+  },
+  {
+    "id": 23,
+    "puesto": "Cocinero",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "operario",
+      "fabrica",
+      "produccion",
+      "linea",
+      "turno"
+    ]
+  },
+  {
+    "id": 24,
+    "puesto": "Diseño paginas web",
+    "categoria": "Especialidades Técnicas y TI",
+    "keywords": [
+      "diseno",
+      "pagina",
+      "web",
+      "ti",
+      "sistema"
+    ]
+  },
+  {
+    "id": 25,
+    "puesto": "Montador de redes",
+    "categoria": "Especialidades Técnicas y TI",
+    "keywords": [
+      "montador",
+      "red",
+      "ti",
+      "sistema",
+      "soporte"
+    ]
+  },
+  {
+    "id": 26,
+    "puesto": "diseño exterior",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 27,
+    "puesto": "Maquinas cristales",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 28,
+    "puesto": "Abrillantador suelos",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 29,
+    "puesto": "Cajera",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "comercial",
+      "venta",
+      "cliente",
+      "tienda",
+      "atencion"
+    ]
+  },
+  {
+    "id": 30,
+    "puesto": "Dependienta",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "comercial",
+      "venta",
+      "cliente",
+      "tienda",
+      "atencion"
+    ]
+  },
+  {
+    "id": 31,
+    "puesto": "Directora tienda",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 32,
+    "puesto": "Aparcacoches",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 33,
+    "puesto": "Jardinero",
+    "categoria": "Agricultura y Jardinería",
+    "keywords": [
+      "jardin",
+      "mantenimiento",
+      "planta",
+      "poda",
+      "riego"
+    ]
+  },
+  {
+    "id": 34,
+    "puesto": "Mozo maletero",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "mozo",
+      "almacen",
+      "logistica",
+      "picking",
+      "inventario"
+    ]
+  },
+  {
+    "id": 35,
+    "puesto": "Gerente",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 36,
+    "puesto": "Fregaplatos",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 37,
+    "puesto": "Instalador AA",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 38,
+    "puesto": "Comercial",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "comercial",
+      "venta",
+      "cliente",
+      "tienda",
+      "atencion"
+    ]
+  },
+  {
+    "id": 39,
+    "puesto": "Costura",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 40,
+    "puesto": "Gestión de Siniestros",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "contabilidad",
+      "financiero"
+    ]
+  },
+  {
+    "id": 41,
+    "puesto": "Carniceria",
+    "categoria": "Alimentación y Comercio Especializado",
+    "keywords": [
+      "carniceria",
+      "carne",
+      "despiece",
+      "tienda",
+      "fresco"
+    ]
+  },
+  {
+    "id": 42,
+    "puesto": "Pescaderia",
+    "categoria": "Alimentación y Comercio Especializado",
+    "keywords": [
+      "pescaderia",
+      "pescado",
+      "fileteado",
+      "tienda",
+      "fresco"
+    ]
+  },
+  {
+    "id": 43,
+    "puesto": "Panaderia",
+    "categoria": "Alimentación y Comercio Especializado",
+    "keywords": [
+      "panaderia",
+      "pan",
+      "horno",
+      "amasado",
+      "tienda"
+    ]
+  },
+  {
+    "id": 44,
+    "puesto": "Gruista",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "almacen",
+      "logistica",
+      "transporte",
+      "reparto",
+      "inventario"
+    ]
+  },
+  {
+    "id": 45,
+    "puesto": "Mantenimiento Informática",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 46,
+    "puesto": "Pintor",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "pintor",
+      "pintura",
+      "obra",
+      "reforma",
+      "acabado"
+    ]
+  },
+  {
+    "id": 47,
+    "puesto": "Repartidor",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "almacen",
+      "logistica",
+      "transporte",
+      "reparto",
+      "inventario"
+    ]
+  },
+  {
+    "id": 48,
+    "puesto": "Soldador",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "soldador",
+      "soldadura",
+      "metal",
+      "chapa",
+      "tig"
+    ]
+  },
+  {
+    "id": 49,
+    "puesto": "Charcutería",
+    "categoria": "Alimentación y Comercio Especializado",
+    "keywords": [
+      "alimentacion",
+      "fresco",
+      "tienda",
+      "supermercado",
+      "producto"
+    ]
+  },
+  {
+    "id": 50,
+    "puesto": "Dep. Financiero (NO USAR)",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "operario",
+      "fabrica",
+      "produccion",
+      "linea",
+      "turno"
+    ]
+  },
+  {
+    "id": 51,
+    "puesto": "Preparador Pedidos",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "preparador",
+      "pedido",
+      "picking",
+      "almacen",
+      "inventario"
+    ]
+  },
+  {
+    "id": 52,
+    "puesto": "Aux Clinica",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "aux",
+      "clinica",
+      "general",
+      "operario",
+      "apoyo"
+    ]
+  },
+  {
+    "id": 53,
+    "puesto": "Ayuda a domicilio",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "ayuda",
+      "domicilio",
+      "general",
+      "operario",
+      "apoyo"
+    ]
+  },
+  {
+    "id": 54,
+    "puesto": "limpieza urbana",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 55,
+    "puesto": "Aux. Seguridad",
+    "categoria": "Seguridad y Vigilancia",
+    "keywords": [
+      "seguridad",
+      "vigilancia",
+      "control",
+      "acceso",
+      "guardia"
+    ]
+  },
+  {
+    "id": 56,
+    "puesto": "Conductor de empresa",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "conductor",
+      "transporte",
+      "vehiculo",
+      "ruta",
+      "reparto"
+    ]
+  },
+  {
+    "id": 57,
+    "puesto": "Vigilante aparcamiento",
+    "categoria": "Seguridad y Vigilancia",
+    "keywords": [
+      "vigilante",
+      "seguridad",
+      "control",
+      "acceso",
+      "guardia"
+    ]
+  },
+  {
+    "id": 58,
+    "puesto": "Guarda Forestal",
+    "categoria": "Seguridad y Vigilancia",
+    "keywords": [
+      "seguridad",
+      "vigilancia",
+      "control",
+      "acceso",
+      "guardia"
+    ]
+  },
+  {
+    "id": 59,
+    "puesto": "Ayudante de camarero",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "ayudante",
+      "apoyo",
+      "tarea",
+      "servicio",
+      "oficio"
+    ]
+  },
+  {
+    "id": 60,
+    "puesto": "Productos Frescos",
+    "categoria": "Alimentación y Comercio Especializado",
+    "keywords": [
+      "alimentacion",
+      "fresco",
+      "tienda",
+      "supermercado",
+      "producto"
+    ]
+  },
+  {
+    "id": 61,
+    "puesto": "Frutería",
+    "categoria": "Alimentación y Comercio Especializado",
+    "keywords": [
+      "alimentacion",
+      "fresco",
+      "tienda",
+      "supermercado",
+      "producto"
+    ]
+  },
+  {
+    "id": 62,
+    "puesto": "Programador",
+    "categoria": "Especialidades Técnicas y TI",
+    "keywords": [
+      "programador",
+      "software",
+      "codigo",
+      "desarrollo",
+      "ti"
+    ]
+  },
+  {
+    "id": 63,
+    "puesto": "Diseño grafico",
+    "categoria": "Especialidades Técnicas y TI",
+    "keywords": [
+      "diseno",
+      "grafico",
+      "ti",
+      "sistema",
+      "soporte"
+    ]
+  },
+  {
+    "id": 64,
+    "puesto": "Conserje",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 65,
+    "puesto": "Embalaje muebles",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "almacen",
+      "logistica",
+      "transporte",
+      "reparto",
+      "inventario"
+    ]
+  },
+  {
+    "id": 66,
+    "puesto": "Control de Accesos",
+    "categoria": "Seguridad y Vigilancia",
+    "keywords": [
+      "seguridad",
+      "vigilancia",
+      "control",
+      "acceso",
+      "guardia"
+    ]
+  },
+  {
+    "id": 67,
+    "puesto": "Centralita",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "contabilidad",
+      "financiero"
+    ]
+  },
+  {
+    "id": 68,
+    "puesto": "Archivo",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "contabilidad",
+      "financiero"
+    ]
+  },
+  {
+    "id": 69,
+    "puesto": "Montador de placas",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 70,
+    "puesto": "Traductor",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 71,
+    "puesto": "Peluquería",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 72,
+    "puesto": "Conductor Volquete",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "conductor",
+      "transporte",
+      "vehiculo",
+      "ruta",
+      "reparto"
+    ]
+  },
+  {
+    "id": 73,
+    "puesto": "Mantenimiento de edificios",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 74,
+    "puesto": "Lavanderia",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 75,
+    "puesto": "Vigilante Parking Hotel",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "vigilante",
+      "seguridad",
+      "control",
+      "acceso",
+      "guardia"
+    ]
+  },
+  {
+    "id": 76,
+    "puesto": "Celador",
+    "categoria": "Seguridad y Vigilancia",
+    "keywords": [
+      "seguridad",
+      "vigilancia",
+      "control",
+      "acceso",
+      "guardia"
+    ]
+  },
+  {
+    "id": 77,
+    "puesto": "N/C",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 78,
+    "puesto": "RRHH",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "contabilidad",
+      "financiero"
+    ]
+  },
+  {
+    "id": 79,
+    "puesto": "Manipulador papel ensobrador",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 80,
+    "puesto": "Vigilante comedor",
+    "categoria": "Seguridad y Vigilancia",
+    "keywords": [
+      "vigilante",
+      "seguridad",
+      "control",
+      "acceso",
+      "guardia"
+    ]
+  },
+  {
+    "id": 81,
+    "puesto": "Lavado Coches",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 82,
+    "puesto": "Fisioterapeuta",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "fisioterapia",
+      "salud",
+      "rehabilitacion",
+      "clinica",
+      "paciente"
+    ]
+  },
+  {
+    "id": 83,
+    "puesto": "Repartidor",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "almacen",
+      "logistica",
+      "transporte",
+      "reparto",
+      "inventario"
+    ]
+  },
+  {
+    "id": 84,
+    "puesto": "Mozo de almacén",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "mozo",
+      "almacen",
+      "logistica",
+      "picking",
+      "inventario"
+    ]
+  },
+  {
+    "id": 85,
+    "puesto": "Tecnico de farmacia",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  },
+  {
+    "id": 86,
+    "puesto": "Aux de Enfermeria",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "enfermeria",
+      "auxiliar",
+      "salud",
+      "clinica",
+      "cuidado"
+    ]
+  },
+  {
+    "id": 87,
+    "puesto": "Delineante",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "contabilidad",
+      "financiero"
+    ]
+  },
+  {
+    "id": 88,
+    "puesto": "Bedel",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 89,
+    "puesto": "Admtvo Contable",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "contabilidad",
+      "financiero"
+    ]
+  },
+  {
+    "id": 90,
+    "puesto": "Operario de fábrica",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "operario",
+      "fabrica",
+      "produccion",
+      "linea",
+      "turno"
+    ]
+  },
+  {
+    "id": 91,
+    "puesto": "Envasado",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 92,
+    "puesto": "Grabador de datos",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "contabilidad",
+      "financiero"
+    ]
+  },
+  {
+    "id": 93,
+    "puesto": "Gestion de Residuos",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 94,
+    "puesto": "Aux. de Movilidad Reducida",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 95,
+    "puesto": "Empleada de Hogar",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 96,
+    "puesto": "Conductor particular",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "conductor",
+      "transporte",
+      "vehiculo",
+      "ruta",
+      "reparto"
+    ]
+  },
+  {
+    "id": 97,
+    "puesto": "Recepcion",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "recepcion",
+      "hotel",
+      "cliente",
+      "atencion",
+      "hosteleria"
+    ]
+  },
+  {
+    "id": 98,
+    "puesto": "Conductor BTP",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "conductor",
+      "transporte",
+      "vehiculo",
+      "ruta",
+      "reparto"
+    ]
+  },
+  {
+    "id": 99,
+    "puesto": "Reponedor",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "reponedor",
+      "supermercado",
+      "almacen",
+      "estanteria",
+      "stock"
+    ]
+  },
+  {
+    "id": 100,
+    "puesto": "Puericultor",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "puericultor",
+      "general",
+      "operario",
+      "apoyo",
+      "tarea"
+    ]
+  },
+  {
+    "id": 101,
+    "puesto": "Mantenimiento de Carreteras",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 102,
+    "puesto": "Etiquetador",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 103,
+    "puesto": "Mozo maletero Areopuerto",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "mozo",
+      "almacen",
+      "logistica",
+      "picking",
+      "inventario"
+    ]
+  },
+  {
+    "id": 104,
+    "puesto": "Pasarela",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 105,
+    "puesto": "Ferralla",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 106,
+    "puesto": "Aux. Informacion",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 107,
+    "puesto": "Informacion Aeropuerto",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 108,
+    "puesto": "Mediador Intercultural",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 109,
+    "puesto": "Frigorista",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 110,
+    "puesto": "Carretillero",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "carretilla",
+      "almacen",
+      "logistica",
+      "carga",
+      "movimiento"
+    ]
+  },
+  {
+    "id": 111,
+    "puesto": "Calefactor",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 112,
+    "puesto": "Lector de Contadores",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 113,
+    "puesto": "Operario de Mantenimiento Agua",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "operario",
+      "fabrica",
+      "produccion",
+      "linea",
+      "turno"
+    ]
+  },
+  {
+    "id": 114,
+    "puesto": "Peón de planta Agua",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 115,
+    "puesto": "Conductor Servicios Urbanos",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "conductor",
+      "transporte",
+      "vehiculo",
+      "ruta",
+      "reparto"
+    ]
+  },
+  {
+    "id": 116,
+    "puesto": "Ingeniero",
+    "categoria": "Legal, Ingeniería y Otros Profesionales",
+    "keywords": [
+      "ingenieria",
+      "proyecto",
+      "tecnico",
+      "diseño",
+      "industrial"
+    ]
+  },
+  {
+    "id": 117,
+    "puesto": "Arquitecto",
+    "categoria": "Legal, Ingeniería y Otros Profesionales",
+    "keywords": [
+      "arquitecto",
+      "plano",
+      "proyecto",
+      "obra",
+      "diseño"
+    ]
+  },
+  {
+    "id": 118,
+    "puesto": "Legal Derecho",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 119,
+    "puesto": "Conductor de camión C",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "conductor",
+      "transporte",
+      "vehiculo",
+      "ruta",
+      "reparto"
+    ]
+  },
+  {
+    "id": 120,
+    "puesto": "Agente de Facturación",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "comercial",
+      "venta",
+      "cliente",
+      "tienda",
+      "atencion"
+    ]
+  },
+  {
+    "id": 121,
+    "puesto": "Aux Colectividades",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 122,
+    "puesto": "Interprete",
+    "categoria": "Legal, Ingeniería y Otros Profesionales",
+    "keywords": [
+      "legal",
+      "abogado",
+      "derecho",
+      "asesoria",
+      "juridico"
+    ]
+  },
+  {
+    "id": 123,
+    "puesto": "Supervisor limpieza",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 124,
+    "puesto": "Cristalero",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "operario",
+      "fabrica",
+      "produccion",
+      "linea",
+      "turno"
+    ]
+  },
+  {
+    "id": 125,
+    "puesto": "Limpieza curso",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 126,
+    "puesto": "SAD curso",
+    "categoria": "Educación y Formación",
+    "keywords": [
+      "educacion",
+      "formacion",
+      "curso",
+      "alumno",
+      "docente"
+    ]
+  },
+  {
+    "id": 127,
+    "puesto": "Cocina curso",
+    "categoria": "Educación y Formación",
+    "keywords": [
+      "cocina",
+      "hosteleria",
+      "restaurante",
+      "preparacion",
+      "servicio"
+    ]
+  },
+  {
+    "id": 128,
+    "puesto": "Gerocultor curso",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "gerocultor",
+      "residencia",
+      "mayor",
+      "cuidado",
+      "sanidad"
+    ]
+  },
+  {
+    "id": 129,
+    "puesto": "Colectividades curso",
+    "categoria": "Educación y Formación",
+    "keywords": [
+      "educacion",
+      "formacion",
+      "curso",
+      "alumno",
+      "docente"
+    ]
+  },
+  {
+    "id": 130,
+    "puesto": "Camarero curso",
+    "categoria": "Educación y Formación",
+    "keywords": [
+      "camarero",
+      "hosteleria",
+      "bar",
+      "restaurante",
+      "servicio"
+    ]
+  },
+  {
+    "id": 131,
+    "puesto": "Electrónica",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 132,
+    "puesto": "Orientación Laboral",
+    "categoria": "Educación y Formación",
+    "keywords": [
+      "educacion",
+      "formacion",
+      "curso",
+      "alumno",
+      "docente"
+    ]
+  },
+  {
+    "id": 133,
+    "puesto": "Habilidades Sociales",
+    "categoria": "Educación y Formación",
+    "keywords": [
+      "educacion",
+      "formacion",
+      "curso",
+      "alumno",
+      "docente"
+    ]
+  },
+  {
+    "id": 134,
+    "puesto": "Manipulador de Alimentos",
+    "categoria": "Educación y Formación",
+    "keywords": [
+      "educacion",
+      "formacion",
+      "curso",
+      "alumno",
+      "docente"
+    ]
+  },
+  {
+    "id": 135,
+    "puesto": "Telemarketing",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "comercial",
+      "venta",
+      "cliente",
+      "tienda",
+      "atencion"
+    ]
+  },
+  {
+    "id": 136,
+    "puesto": "Limpieza DGF",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 137,
+    "puesto": "Caja-repo curso",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "comercial",
+      "venta",
+      "cliente",
+      "tienda",
+      "atencion"
+    ]
+  },
+  {
+    "id": 138,
+    "puesto": "fresco-repo curso",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "comercial",
+      "venta",
+      "cliente",
+      "tienda",
+      "atencion"
+    ]
+  },
+  {
+    "id": 139,
+    "puesto": "Planificador de radio y televisión",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 140,
+    "puesto": "Comunicacion Multimedia",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 141,
+    "puesto": "Expendedor Gasolinera",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "comercial",
+      "venta",
+      "cliente",
+      "tienda",
+      "atencion"
+    ]
+  },
+  {
+    "id": 142,
+    "puesto": "Teleoperador curso",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "teleoperador",
+      "callcenter",
+      "telefono",
+      "cliente",
+      "atencion"
+    ]
+  },
+  {
+    "id": 143,
+    "puesto": "Cuidado personas DIscapacidad",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "cuidado",
+      "persona",
+      "discapacidad",
+      "general",
+      "operario"
+    ]
+  },
+  {
+    "id": 144,
+    "puesto": "Valet",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 145,
+    "puesto": "Competencias y Motivación",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 146,
+    "puesto": "Dinamica de grupo",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 147,
+    "puesto": "Limpieza curso",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 148,
+    "puesto": "Control de probadores",
+    "categoria": "Seguridad y Vigilancia",
+    "keywords": [
+      "seguridad",
+      "vigilancia",
+      "control",
+      "acceso",
+      "guardia"
+    ]
+  },
+  {
+    "id": 149,
+    "puesto": "Teleasistencia",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 150,
+    "puesto": "Auxiliar de Obra",
+    "categoria": "Construcción y Obra",
+    "keywords": [
+      "construccion",
+      "obra",
+      "reforma",
+      "edificacion",
+      "proyecto"
+    ]
+  },
+  {
+    "id": 151,
+    "puesto": "Agente oficinas aeropuerto",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 152,
+    "puesto": "Promotora",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "comercial",
+      "venta",
+      "cliente",
+      "tienda",
+      "atencion"
+    ]
+  },
+  {
+    "id": 153,
+    "puesto": "Accesibilidad a TV",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 154,
+    "puesto": "Analista de Laboratorio",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 155,
+    "puesto": "Carrista",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 156,
+    "puesto": "Aux.Ruta",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 157,
+    "puesto": "Azafate AVE",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 158,
+    "puesto": "Azafata de eventos",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 159,
+    "puesto": "Contable",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "contador",
+      "caja",
+      "finanzas",
+      "balance",
+      "contable"
+    ]
+  },
+  {
+    "id": 160,
+    "puesto": "Formador",
+    "categoria": "Educación y Formación",
+    "keywords": [
+      "educacion",
+      "formacion",
+      "curso",
+      "alumno",
+      "docente"
+    ]
+  },
+  {
+    "id": 161,
+    "puesto": "Agente de viajes (diplomado)",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 162,
+    "puesto": "Psicólogo",
+    "categoria": "Legal, Ingeniería y Otros Profesionales",
+    "keywords": [
+      "psicologia",
+      "terapia",
+      "salud",
+      "clinica",
+      "paciente"
+    ]
+  },
+  {
+    "id": 163,
+    "puesto": "Carn-Pesc Curso",
+    "categoria": "Alimentación y Comercio Especializado",
+    "keywords": [
+      "alimentacion",
+      "fresco",
+      "tienda",
+      "supermercado",
+      "producto"
+    ]
+  },
+  {
+    "id": 164,
+    "puesto": "Limpieza de Playas",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 165,
+    "puesto": "Podador",
+    "categoria": "Agricultura y Jardinería",
+    "keywords": [
+      "jardineria",
+      "agricultura",
+      "poda",
+      "riego",
+      "campo"
+    ]
+  },
+  {
+    "id": 166,
+    "puesto": "Técnico de emergencias",
+    "categoria": "Seguridad y Vigilancia",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  },
+  {
+    "id": 167,
+    "puesto": "Técnico Logística",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  },
+  {
+    "id": 168,
+    "puesto": "Estaciones de Servicio Repsol Curso",
+    "categoria": "Educación y Formación",
+    "keywords": [
+      "educacion",
+      "formacion",
+      "curso",
+      "alumno",
+      "docente"
+    ]
+  },
+  {
+    "id": 169,
+    "puesto": "Ayudante de cocina curso",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "ayudante",
+      "apoyo",
+      "tarea",
+      "servicio",
+      "oficio"
+    ]
+  },
+  {
+    "id": 170,
+    "puesto": "Control de Accesos curso",
+    "categoria": "Seguridad y Vigilancia",
+    "keywords": [
+      "seguridad",
+      "vigilancia",
+      "control",
+      "acceso",
+      "guardia"
+    ]
+  },
+  {
+    "id": 171,
+    "puesto": "Ayudante de camarero curso",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "ayudante",
+      "apoyo",
+      "tarea",
+      "servicio",
+      "oficio"
+    ]
+  },
+  {
+    "id": 172,
+    "puesto": "Analista de Sistemas",
+    "categoria": "Especialidades Técnicas y TI",
+    "keywords": [
+      "analista",
+      "sistema",
+      "ti",
+      "soporte",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 173,
+    "puesto": "Enfermera",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "enfermera",
+      "general",
+      "operario",
+      "apoyo",
+      "tarea"
+    ]
+  },
+  {
+    "id": 174,
+    "puesto": "Trabajadora Social",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "trabajadora",
+      "social",
+      "general",
+      "operario",
+      "apoyo"
+    ]
+  },
+  {
+    "id": 175,
+    "puesto": "Coordinadora SAD",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "coordinadora",
+      "sad",
+      "general",
+      "operario",
+      "apoyo"
+    ]
+  },
+  {
+    "id": 176,
+    "puesto": "Acomodador",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 177,
+    "puesto": "Responsable de Almacén",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "almacen",
+      "logistica",
+      "transporte",
+      "reparto",
+      "inventario"
+    ]
+  },
+  {
+    "id": 178,
+    "puesto": "Estaciones de servicio",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 179,
+    "puesto": "Vendedor de Billetes",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 180,
+    "puesto": "Agente de Viajes",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 181,
+    "puesto": "Mantenimiento",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 182,
+    "puesto": "Mozo maletero",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "mozo",
+      "almacen",
+      "logistica",
+      "picking",
+      "inventario"
+    ]
+  },
+  {
+    "id": 183,
+    "puesto": "AMR",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "almacen",
+      "logistica",
+      "transporte",
+      "reparto",
+      "inventario"
+    ]
+  },
+  {
+    "id": 184,
+    "puesto": "Técnico de riesgos laborales",
+    "categoria": "Seguridad y Vigilancia",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  },
+  {
+    "id": 185,
+    "puesto": "Operario de rampa",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "operario",
+      "fabrica",
+      "produccion",
+      "linea",
+      "turno"
+    ]
+  },
+  {
+    "id": 186,
+    "puesto": "Comercial de Restauracion",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "comercial",
+      "venta",
+      "cliente",
+      "tienda",
+      "atencion"
+    ]
+  },
+  {
+    "id": 187,
+    "puesto": "Somelier",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 188,
+    "puesto": "Help Desk",
+    "categoria": "Especialidades Técnicas y TI",
+    "keywords": [
+      "help",
+      "desk",
+      "ti",
+      "sistema",
+      "soporte"
+    ]
+  },
+  {
+    "id": 189,
+    "puesto": "Cajero",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "operario",
+      "fabrica",
+      "produccion",
+      "linea",
+      "turno"
+    ]
+  },
+  {
+    "id": 190,
+    "puesto": "Técnico Audivisual",
+    "categoria": "Especialidades Técnicas y TI",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  },
+  {
+    "id": 191,
+    "puesto": "Digitalizador",
+    "categoria": "Especialidades Técnicas y TI",
+    "keywords": [
+      "digitalizador",
+      "ti",
+      "sistema",
+      "soporte",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 192,
+    "puesto": "Gobernanta",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 193,
+    "puesto": "Médico",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "medico",
+      "general",
+      "operario",
+      "apoyo",
+      "tarea"
+    ]
+  },
+  {
+    "id": 194,
+    "puesto": "Preparador Vehiculos",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "preparador",
+      "pedido",
+      "picking",
+      "almacen",
+      "inventario"
+    ]
+  },
+  {
+    "id": 195,
+    "puesto": "Técnico financiero",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  },
+  {
+    "id": 196,
+    "puesto": "Técnico de comunicación",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  },
+  {
+    "id": 197,
+    "puesto": "Auxiliar técnico de veterinario",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  },
+  {
+    "id": 198,
+    "puesto": "Patron de Cabotaje",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 199,
+    "puesto": "Patron de Marina Mercante",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 200,
+    "puesto": "Limpieza de gruas",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 201,
+    "puesto": "Matriculación",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 202,
+    "puesto": "Coordinador de carrera",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 203,
+    "puesto": "Coordinador de alumnos",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 204,
+    "puesto": "Técnico contable",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  },
+  {
+    "id": 205,
+    "puesto": "Administrativo de obra",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "documentacion",
+      "contabilidad"
+    ]
+  },
+  {
+    "id": 206,
+    "puesto": "Mozo de cuadra",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "mozo",
+      "almacen",
+      "logistica",
+      "picking",
+      "inventario"
+    ]
+  },
+  {
+    "id": 207,
+    "puesto": "Responsable de servicios",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 208,
+    "puesto": "Peón de triaje",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 209,
+    "puesto": "Socorrista",
+    "categoria": "Seguridad y Vigilancia",
+    "keywords": [
+      "seguridad",
+      "vigilancia",
+      "control",
+      "acceso",
+      "guardia"
+    ]
+  },
+  {
+    "id": 210,
+    "puesto": "Soldador",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "soldador",
+      "soldadura",
+      "metal",
+      "chapa",
+      "tig"
+    ]
+  },
+  {
+    "id": 211,
+    "puesto": "Limpieza de Aviones",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 212,
+    "puesto": "Operario Recogida Residuos",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "operario",
+      "fabrica",
+      "produccion",
+      "linea",
+      "turno"
+    ]
+  },
+  {
+    "id": 213,
+    "puesto": "Control de Pasaportes",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "almacen",
+      "logistica",
+      "transporte",
+      "reparto",
+      "inventario"
+    ]
+  },
+  {
+    "id": 214,
+    "puesto": "Auxiliar oficios varios",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 215,
+    "puesto": "Limpieza zonas comunes",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 216,
+    "puesto": "Contador mercancias",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "almacen",
+      "logistica",
+      "transporte",
+      "reparto",
+      "inventario"
+    ]
+  },
+  {
+    "id": 217,
+    "puesto": "Control pasarelas",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 218,
+    "puesto": "Basculista de camiones",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "almacen",
+      "logistica",
+      "transporte",
+      "reparto",
+      "inventario"
+    ]
+  },
+  {
+    "id": 219,
+    "puesto": "Reparador de parkimetros y recaudador",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 220,
+    "puesto": "Limpieza Criogénica",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 221,
+    "puesto": "Albañil",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 222,
+    "puesto": "Servicios generales",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 223,
+    "puesto": "Limpieza mantenimiento maquinas",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 224,
+    "puesto": "Conductor C",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "conductor",
+      "transporte",
+      "vehiculo",
+      "ruta",
+      "reparto"
+    ]
+  },
+  {
+    "id": 225,
+    "puesto": "SAF",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 226,
+    "puesto": "Especialista en Datos",
+    "categoria": "Especialidades Técnicas y TI",
+    "keywords": [
+      "especialista",
+      "dato",
+      "ti",
+      "sistema",
+      "soporte"
+    ]
+  },
+  {
+    "id": 227,
+    "puesto": "Peón agrícola",
+    "categoria": "Agricultura y Jardinería",
+    "keywords": [
+      "jardineria",
+      "agricultura",
+      "poda",
+      "riego",
+      "campo"
+    ]
+  },
+  {
+    "id": 228,
+    "puesto": "Tanatoestética",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "tanatoestetica",
+      "general",
+      "operario",
+      "apoyo",
+      "tarea"
+    ]
+  },
+  {
+    "id": 229,
+    "puesto": "Conductor",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "conductor",
+      "transporte",
+      "vehiculo",
+      "ruta",
+      "reparto"
+    ]
+  },
+  {
+    "id": 230,
+    "puesto": "Aux. de Ruta",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "almacen",
+      "logistica",
+      "transporte",
+      "reparto",
+      "inventario"
+    ]
+  },
+  {
+    "id": 231,
+    "puesto": "Asesor tecnológico",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "tecnología",
+      "ingenieria",
+      "digital",
+      "sistemas",
+      "servicio"
+    ]
+  },
+  {
+    "id": 232,
+    "puesto": "Educador",
+    "categoria": "Educación y Formación",
+    "keywords": [
+      "educacion",
+      "formacion",
+      "curso",
+      "alumno",
+      "docente"
+    ]
+  },
+  {
+    "id": 233,
+    "puesto": "Ordenanza",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 234,
+    "puesto": "Especialista en compras",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "compras",
+      "especial",
+      "proveedor",
+      "proveedores",
+      "retail"
+    ]
+  },
+  {
+    "id": 235,
+    "puesto": "Interprete",
+    "categoria": "Legal, Ingeniería y Otros Profesionales",
+    "keywords": [
+      "legal",
+      "abogado",
+      "derecho",
+      "asesoria",
+      "juridico"
+    ]
+  },
+  {
+    "id": 236,
+    "puesto": "Montador eventos",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 237,
+    "puesto": "Técnico de Licitaciones",
+    "categoria": "Legal, Ingeniería y Otros Profesionales",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  },
+  {
+    "id": 238,
+    "puesto": "Becario",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "contabilidad",
+      "financiero"
+    ]
+  },
+  {
+    "id": 239,
+    "puesto": "Limpiador de hospitales",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpiador",
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento"
+    ]
+  },
+  {
+    "id": 240,
+    "puesto": "Limpieza de supermercados",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 241,
+    "puesto": "Peón",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "almacen",
+      "logistica",
+      "transporte",
+      "reparto",
+      "inventario"
+    ]
+  },
+  {
+    "id": 242,
+    "puesto": "Aux. Jardinería",
+    "categoria": "Agricultura y Jardinería",
+    "keywords": [
+      "jardineria",
+      "agricultura",
+      "poda",
+      "riego",
+      "campo"
+    ]
+  },
+  {
+    "id": 243,
+    "puesto": "Técnico Forestal",
+    "categoria": "Agricultura y Jardinería",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  },
+  {
+    "id": 244,
+    "puesto": "Esteticien",
+    "categoria": "Sanidad y Cuidado Personal",
+    "keywords": [
+      "esteticien",
+      "general",
+      "operario",
+      "apoyo",
+      "tarea"
+    ]
+  },
+  {
+    "id": 245,
+    "puesto": "Administrativo Facturación",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "documentacion",
+      "contabilidad"
+    ]
+  },
+  {
+    "id": 246,
+    "puesto": "Analista",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "contabilidad",
+      "financiero"
+    ]
+  },
+  {
+    "id": 247,
+    "puesto": "Administrativo financiero",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "documentacion",
+      "contabilidad"
+    ]
+  },
+  {
+    "id": 248,
+    "puesto": "Estadístico riesgo no financiero",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "operario",
+      "fabrica",
+      "produccion",
+      "linea",
+      "turno"
+    ]
+  },
+  {
+    "id": 249,
+    "puesto": "Administrativo sostenibilidad",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "documentacion",
+      "contabilidad"
+    ]
+  },
+  {
+    "id": 250,
+    "puesto": "Agente de Reservas",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "comercial",
+      "venta",
+      "cliente",
+      "tienda",
+      "atencion"
+    ]
+  },
+  {
+    "id": 251,
+    "puesto": "Agente",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "comercial",
+      "venta",
+      "cliente",
+      "tienda",
+      "atencion"
+    ]
+  },
+  {
+    "id": 252,
+    "puesto": "Electromecánico",
+    "categoria": "Mantenimiento y Oficios Varios",
+    "keywords": [
+      "mantenimiento",
+      "oficio",
+      "reparacion",
+      "instalacion",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 253,
+    "puesto": "Administrativos Relaciones Laborales",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "contabilidad",
+      "financiero"
+    ]
+  },
+  {
+    "id": 254,
+    "puesto": "Asistente Marketing",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 255,
+    "puesto": "Conductor VTC",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "conductor",
+      "transporte",
+      "vehiculo",
+      "ruta",
+      "reparto"
+    ]
+  },
+  {
+    "id": 256,
+    "puesto": "Responsable de calidad",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "general",
+      "operario",
+      "apoyo",
+      "tarea",
+      "servicio"
+    ]
+  },
+  {
+    "id": 257,
+    "puesto": "Monitora de Yoga y otras actividades",
+    "categoria": "Educación y Formación",
+    "keywords": [
+      "educacion",
+      "formacion",
+      "curso",
+      "alumno",
+      "docente"
+    ]
+  },
+  {
+    "id": 258,
+    "puesto": "Limpieza industrial",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 259,
+    "puesto": "Técnico de operaciones",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  },
+  {
+    "id": 260,
+    "puesto": "Ayte office",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 261,
+    "puesto": "Limpieza especialista",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "keywords": [
+      "limpieza",
+      "aseo",
+      "higiene",
+      "mantenimiento",
+      "auxiliar"
+    ]
+  },
+  {
+    "id": 262,
+    "puesto": "Botones",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 263,
+    "puesto": "Ingeniero junior",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "ingenieria",
+      "proyecto",
+      "tecnico",
+      "diseño",
+      "industrial"
+    ]
+  },
+  {
+    "id": 264,
+    "puesto": "Monitor tiempo libre",
+    "categoria": "Educación y Formación",
+    "keywords": [
+      "educacion",
+      "formacion",
+      "curso",
+      "alumno",
+      "docente"
+    ]
+  },
+  {
+    "id": 265,
+    "puesto": "Técnico de Tráfico",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  },
+  {
+    "id": 266,
+    "puesto": "Peajista",
+    "categoria": "Comercial y Atención al Cliente",
+    "keywords": [
+      "comercial",
+      "venta",
+      "cliente",
+      "tienda",
+      "atencion"
+    ]
+  },
+  {
+    "id": 267,
+    "puesto": "Técnico de Nóminas",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  },
+  {
+    "id": 268,
+    "puesto": "Administrativo de compras",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "documentacion",
+      "contabilidad"
+    ]
+  },
+  {
+    "id": 269,
+    "puesto": "Asesor jurídico",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "contabilidad",
+      "financiero"
+    ]
+  },
+  {
+    "id": 270,
+    "puesto": "Documentalista",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "contabilidad",
+      "financiero"
+    ]
+  },
+  {
+    "id": 271,
+    "puesto": "Papa noel/paje",
+    "categoria": "Hostelería y Turismo",
+    "keywords": [
+      "hosteleria",
+      "hotel",
+      "restaurante",
+      "servicio",
+      "atencion"
+    ]
+  },
+  {
+    "id": 272,
+    "puesto": "Administrativo Curso",
+    "categoria": "Educación y Formación",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "documentacion",
+      "contabilidad"
+    ]
+  },
+  {
+    "id": 273,
+    "puesto": "Administrativo Curso",
+    "categoria": "Educación y Formación",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "documentacion",
+      "contabilidad"
+    ]
+  },
+  {
+    "id": 274,
+    "puesto": "Administrativo",
+    "categoria": "Administración, Oficina y Finanzas",
+    "keywords": [
+      "administracion",
+      "oficina",
+      "gestion",
+      "documentacion",
+      "contabilidad"
+    ]
+  },
+  {
+    "id": 275,
+    "puesto": "Soporte IT",
+    "categoria": "Especialidades Técnicas y TI",
+    "keywords": [
+      "soporte",
+      "incidencia",
+      "usuario",
+      "ti",
+      "hardware"
+    ]
+  },
+  {
+    "id": 276,
+    "puesto": "Abogado",
+    "categoria": "Legal, Ingeniería y Otros Profesionales",
+    "keywords": [
+      "abogado",
+      "legal",
+      "derecho",
+      "asesoria",
+      "juridico"
+    ]
+  },
+  {
+    "id": 277,
+    "puesto": "Conductor maquinas vending",
+    "categoria": "Almacén, Logística y Transporte",
+    "keywords": [
+      "conductor",
+      "transporte",
+      "vehiculo",
+      "ruta",
+      "reparto"
+    ]
+  },
+  {
+    "id": 278,
+    "puesto": "Técnico de calidad",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "keywords": [
+      "tecnico",
+      "sistema",
+      "soporte",
+      "software",
+      "red"
+    ]
+  }
+]
