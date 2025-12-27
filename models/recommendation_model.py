@@ -5,18 +5,13 @@ import json
 from pathlib import Path
 import unicodedata
 import re
+from utils.auxiliar import normalize
 
 CATALOG_PATH = Path("data/puestos_keywords.json")
 
 with open(CATALOG_PATH, "r", encoding="utf-8") as f:
     PUESTOS_CATALOG = json.load(f)
 
-def normalize(text: str) -> str:
-    text = text.lower()
-    text = unicodedata.normalize("NFKD", text)
-    text = text.encode("ascii", "ignore").decode("utf-8")
-    text = re.sub(r"[^a-z\s]", "", text)
-    return text.strip()
 
 def experience_matches_puesto(
     exp_title: str,

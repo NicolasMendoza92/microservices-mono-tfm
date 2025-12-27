@@ -15,6 +15,7 @@ from models.employability_model import predict_employability
 from models.recommendation_model import recommend_jobs
 from models.interview_prep import generate_interview_questions 
 from models.cv_summarizer import summarize_cv
+from models.offer_matcher import match_offers
 
 
 app = FastAPI(
@@ -69,10 +70,9 @@ async def extract_cv_data_endpoint(file: UploadFile = File(...)):
         file_location = await save_upload_file(file)
         raw_text = await extract_text_from_file(file_location)
         
-        # despues de que saca la info con hugging NER envio el texto plano a esta funcion
+        # Microservicio 1 - despues de que saca la info con hugging NER envio el texto plano a esta funcion
         extracted_data = await extract_cv_data_from_text(raw_text, candidate_id, file.filename)
         
-        # Guarda los datos extraídos para posible recuperación o para el siguiente paso
         extracted_data_db[candidate_id] = extracted_data
         
         return extracted_data
@@ -154,6 +154,29 @@ def summarize_endpoint(req: SummarizeRequest):
     return {"summary": summary}
 
 
+@app.post("/offer-matcher")
+async def offer_matcher(candidate_data: ExtractedCVData):
+    try:
+        # 1️⃣ Puestos recomendados
+        job_recommendations = await recommend_jobs(candidate_data)
+
+        # 2️⃣ Match contra ofertas
+        offer_matches = await match_offers(
+            candidate_data=candidate_data,
+            recommended_positions=job_recommendations
+        )
+
+        return {
+            "recommended_positions": job_recommendations,
+            "matched_offers": offer_matches
+        }
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error en offer matcher: {str(e)}"
+        )
+
 
 @app.get(
     "/candidate-summary/{candidate_id}",
@@ -165,10 +188,7 @@ def summarize_endpoint(req: SummarizeRequest):
     }
 )
 async def get_candidate_summary(candidate_id: str):
-    """
-    Permite obtener el resumen de un candidato previamente procesado
-    usando su ID único.
-    """
+
     summary = candidate_summaries_db.get(candidate_id)
     if not summary:
         raise HTTPException(

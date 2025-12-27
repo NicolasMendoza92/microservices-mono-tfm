@@ -1,0 +1,342 @@
+[
+  {
+    "id": 1,
+    "puesto": "Conductor VTC",
+    "activo": true,
+    "empresa": "UBER",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "descripcion": "Conducción de VTC, atención al pasajero y cumplimiento de rutas asignadas.",
+    "fecha_inicio": "2025-12-18",
+    "fecha_fin": "2026-01-15"
+  },
+  {
+    "id": 2,
+    "puesto": "Control de probadores",
+    "activo": true,
+    "empresa": "Interlabora  CEE",
+    "categoria": "Miscelánea / Sin Categorizar",
+    "descripcion": "Puesto de Control de probadores en Interlabora  CEE. Tareas propias del rol, coordinación con equipo y reporte.",
+    "fecha_inicio": "2025-12-17",
+    "fecha_fin": "2026-01-14"
+  },
+  {
+    "id": 3,
+    "puesto": "Lavado Coches",
+    "activo": true,
+    "empresa": "Acciona  FS",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Lavado y detallado de coches. Aplicación de productos, aspirado interior y control de calidad.",
+    "fecha_inicio": "2025-12-15",
+    "fecha_fin": "2026-01-12"
+  },
+  {
+    "id": 4,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "EULEN",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-17",
+    "fecha_fin": "2026-01-14"
+  },
+  {
+    "id": 5,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "EULEN",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-18",
+    "fecha_fin": "2026-01-15"
+  },
+  {
+    "id": 6,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "Sagital",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-18",
+    "fecha_fin": "2026-01-15"
+  },
+  {
+    "id": 7,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "SAMSIC SOCIAL",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-16",
+    "fecha_fin": "2026-01-13"
+  },
+  {
+    "id": 8,
+    "puesto": "Ayuda a domicilio",
+    "activo": true,
+    "empresa": "SERVEO SOCIAL",
+    "categoria": "Sanidad y Cuidado Personal",
+    "descripcion": "Atención personal en domicilio: aseo, acompañamiento, tareas básicas del hogar. Plan de trabajo por rutas.",
+    "fecha_inicio": "2025-12-19",
+    "fecha_fin": "2026-01-16"
+  },
+  {
+    "id": 9,
+    "puesto": "Ayudante de cocina",
+    "activo": true,
+    "empresa": "Sacyr Servicios Cafestore",
+    "categoria": "Hostelería y Turismo",
+    "descripcion": "Apoyo en cocina: preparación de elaboraciones simples, limpieza y orden, apoyo a cocineros.",
+    "fecha_inicio": "2025-12-10",
+    "fecha_fin": "2026-01-07"
+  },
+  {
+    "id": 10,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "Acciona  FS",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-18",
+    "fecha_fin": "2026-01-15"
+  },
+  {
+    "id": 11,
+    "puesto": "Limpieza zonas comunes",
+    "activo": true,
+    "empresa": "Sagital",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Limpieza de zonas comunes, pasillos, recepción y aseos. Control de reposición de materiales.",
+    "fecha_inicio": "2025-12-18",
+    "fecha_fin": "2026-01-15"
+  },
+  {
+    "id": 12,
+    "puesto": "Mozo de almacén",
+    "activo": true,
+    "empresa": "Condis",
+    "categoria": "Almacén, Logística y Transporte",
+    "descripcion": "Recepción y preparación de pedidos, picking, control de inventario y uso de carretilla (según formación).",
+    "fecha_inicio": "2025-12-17",
+    "fecha_fin": "2026-01-14"
+  },
+  {
+    "id": 13,
+    "puesto": "Dependienta",
+    "activo": true,
+    "empresa": "RESTAURANT BRAND IBERIA",
+    "categoria": "Comercial y Atención al Cliente",
+    "descripcion": "Atención al cliente en tienda, cobro, reposición y orden del punto de venta.",
+    "fecha_inicio": "2025-12-16",
+    "fecha_fin": "2026-01-13"
+  },
+  {
+    "id": 14,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "EULEN",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-17",
+    "fecha_fin": "2026-01-14"
+  },
+  {
+    "id": 15,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "SAMSIC SOCIAL",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-11",
+    "fecha_fin": "2026-01-08"
+  },
+  {
+    "id": 16,
+    "puesto": "Lavanderia",
+    "activo": true,
+    "empresa": "ELIS",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Puesto de Lavanderia en ELIS. Tareas propias del rol, coordinación con equipo y reporte.",
+    "fecha_inicio": "2025-12-05",
+    "fecha_fin": "2026-01-02"
+  },
+  {
+    "id": 17,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "Anayet Mundus",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-16",
+    "fecha_fin": "2026-01-13"
+  },
+  {
+    "id": 18,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "EULEN",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-19",
+    "fecha_fin": "2026-01-16"
+  },
+  {
+    "id": 19,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "EULEN",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-16",
+    "fecha_fin": "2026-01-13"
+  },
+  {
+    "id": 20,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "Limpiezas Lavi",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-16",
+    "fecha_fin": "2026-01-13"
+  },
+  {
+    "id": 21,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "Acciona  FS",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-18",
+    "fecha_fin": "2026-01-15"
+  },
+  {
+    "id": 22,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "EULEN",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-18",
+    "fecha_fin": "2026-01-15"
+  },
+  {
+    "id": 23,
+    "puesto": "Limpieza de trenes",
+    "activo": true,
+    "empresa": "Acciona  FS",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Limpieza interior de trenes: retirada de residuos, suelos, cristales y aseos en base y en ruta.",
+    "fecha_inicio": "2025-12-11",
+    "fecha_fin": "2026-01-08"
+  },
+  {
+    "id": 24,
+    "puesto": "Cajera",
+    "activo": true,
+    "empresa": "CARREFOUR",
+    "categoria": "Comercial y Atención al Cliente",
+    "descripcion": "Cobro en cajas, atención al cliente, arqueo y reposición básica.",
+    "fecha_inicio": "2025-12-05",
+    "fecha_fin": "2026-01-02"
+  },
+  {
+    "id": 25,
+    "puesto": "Aux. administrativo",
+    "activo": true,
+    "empresa": "CEE SIES",
+    "categoria": "Comercial y Atención al Cliente",
+    "descripcion": "Puesto de Aux. administrativo en CEE SIES. Tareas propias del rol, coordinación con equipo y reporte.",
+    "fecha_inicio": "2025-12-16",
+    "fecha_fin": "2026-01-13"
+  },
+  {
+    "id": 26,
+    "puesto": "Repartidor",
+    "activo": true,
+    "empresa": "COFARES",
+    "categoria": "Almacén, Logística y Transporte",
+    "descripcion": "Reparto en ruta, entrega a clientes, control de albaranes y manejo de vehículo.",
+    "fecha_inicio": "2025-12-19",
+    "fecha_fin": "2026-01-16"
+  },
+  {
+    "id": 27,
+    "puesto": "Cajera",
+    "activo": true,
+    "empresa": "EL CORTE INGLES",
+    "categoria": "Comercial y Atención al Cliente",
+    "descripcion": "Cobro en cajas, atención al cliente, arqueo y reposición básica.",
+    "fecha_inicio": "2025-12-16",
+    "fecha_fin": "2026-01-13"
+  },
+  {
+    "id": 28,
+    "puesto": "Cajera",
+    "activo": true,
+    "empresa": "Eroski Center Baleares",
+    "categoria": "Comercial y Atención al Cliente",
+    "descripcion": "Cobro en cajas, atención al cliente, arqueo y reposición básica.",
+    "fecha_inicio": "2025-12-16",
+    "fecha_fin": "2026-01-13"
+  },
+  {
+    "id": 29,
+    "puesto": "Cajera",
+    "activo": true,
+    "empresa": "Eroski Center Zaragoza",
+    "categoria": "Comercial y Atención al Cliente",
+    "descripcion": "Cobro en cajas, atención al cliente, arqueo y reposición básica.",
+    "fecha_inicio": "2025-12-18",
+    "fecha_fin": "2026-01-15"
+  },
+  {
+    "id": 30,
+    "puesto": "Preparador Pedidos",
+    "activo": true,
+    "empresa": "Eroski Center Zaragoza",
+    "categoria": "Almacén, Logística y Transporte",
+    "descripcion": "Preparación de pedidos, picking, embalaje y ubicación en almacén.",
+    "fecha_inicio": "2025-12-18",
+    "fecha_fin": "2026-01-15"
+  },
+  {
+    "id": 31,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "EULEN",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-11",
+    "fecha_fin": "2026-01-08"
+  },
+  {
+    "id": 32,
+    "puesto": "Limpiador",
+    "activo": true,
+    "empresa": "Eulen CEE",
+    "categoria": "Limpieza y Servicios Auxiliares",
+    "descripcion": "Tareas de limpieza general y mantenimiento de espacios. Uso de productos, limpieza de baños, zonas comunes y apoyo en turnos.",
+    "fecha_inicio": "2025-12-05",
+    "fecha_fin": "2026-01-02"
+  },
+  {
+    "id": 33,
+    "puesto": "Ayudante de camarero",
+    "activo": true,
+    "empresa": "Flexiplan",
+    "categoria": "Hostelería y Turismo",
+    "descripcion": "Apoyo en sala: preparación de mesas, servicio, recogida y limpieza de zona de comedor.",
+    "fecha_inicio": "2025-12-16",
+    "fecha_fin": "2026-01-13"
+  },
+  {
+    "id": 34,
+    "puesto": "Administrativo",
+    "activo": true,
+    "empresa": "INECO",
+    "categoria": "Administración, Oficina y Finanzas",
+    "descripcion": "Gestión documental, atención telefónica, soporte a equipos y uso de herramientas ofimáticas.",
+    "fecha_inicio": "2025-12-19",
+    "fecha_fin": "2026-01-16"
+  }
+]

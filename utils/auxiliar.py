@@ -2,6 +2,7 @@
 from typing import  Tuple 
 import re
 import datetime
+import unicodedata
 from utils.standard_job_titles import STANDARD_JOB_TITLES
 from utils.standard_education_levels import STANDARD_EDUCATION_LEVELS
 
@@ -99,6 +100,13 @@ def normalize_job_title(title: str) -> str:
         if title_lower == standard_title or any(re.search(r'\b' + re.escape(var) + r'\b', title_lower) for var in variations):
             return standard_title.title() 
     return "Otro" 
+
+def normalize(text: str) -> str:
+    text = text.lower()
+    text = unicodedata.normalize("NFKD", text)
+    text = text.encode("ascii", "ignore").decode("utf-8")
+    text = re.sub(r"[^a-z\s]", "", text)
+    return text.strip()
 
 
 def categorize_education_level(text: str) -> str:
