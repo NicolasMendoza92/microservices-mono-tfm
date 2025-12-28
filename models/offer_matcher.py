@@ -60,7 +60,7 @@ async def match_offers(
 
         # 3️⃣ Skills
         if offer.get("descripcion") and text_contains_any(
-            offer["descripcion"], skills
+            offer["descripcion"], skills_text
         ):
             score += 20
             reasons.append("Habilidades coincidentes")
