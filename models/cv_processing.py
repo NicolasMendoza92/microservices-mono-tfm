@@ -1,5 +1,7 @@
 import os
-import fitz
+
+# import fitz
+import pdfplumber
 from docx import Document
 from transformers import pipeline
 from typing import List, Optional, Dict, Any
@@ -39,10 +41,9 @@ async def extract_text_from_file(file_path: str) -> str:
 
     if file_extension == ".pdf":
         try:
-            doc = fitz.open(file_path)
-            for page in doc:
-                text += page.get_text()
-            doc.close()
+            with pdfplumber.open(file_path) as pdf:  
+                for page in pdf.pages:
+                    text += page.extract_text() or ""  
         except Exception as e:
             logger.error(f"Error al leer PDF {file_path}: {e}")
             raise ValueError("No se pudo extraer texto del PDF.")
