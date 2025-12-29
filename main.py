@@ -1,5 +1,4 @@
 # main.py
-
 from fastapi import FastAPI, UploadFile, File, HTTPException, status
 from typing import Dict
 from uuid import uuid4
@@ -8,15 +7,17 @@ import os
 import datetime
 from config import add_cors_middleware
 from schemas.cv import ExtractedCVData, CandidateData
-from schemas.candidate import CandidateSummary, CVProcessedData, ErrorResponse
+from schemas.candidate import CandidateSummary, CVProcessedData
+from fastapi import Depends
+from db.session import get_db
+from sqlalchemy.ext.asyncio import AsyncSession
 from utils.file_handler import save_upload_file
 from models.cv_processing import extract_text_from_file, extract_cv_data_from_text
 from models.employability_model import predict_employability
 from models.recommendation_model import recommend_jobs
 from models.interview_prep import generate_interview_questions 
 from models.cv_summarizer import summarize_cv
-from models.offer_matcher import match_offers
-
+from models.offers.matcher import match_offers
 
 app = FastAPI(
     title="T3 Chat - API de Inclusión Laboral",
@@ -155,44 +156,21 @@ def summarize_endpoint(req: SummarizeRequest):
 
 
 @app.post("/offer-matcher")
-async def offer_matcher(candidate_data: ExtractedCVData):
-    try:
-        # 1️⃣ Puestos recomendados
-        job_recommendations = await recommend_jobs(candidate_data)
+async def offer_matcher(
+    candidate_data: ExtractedCVData,
+    db: AsyncSession = Depends(get_db)
+):
+    job_recommendations = await recommend_jobs(candidate_data)
 
-        # 2️⃣ Match contra ofertas
-        offer_matches = await match_offers(
-            candidate_data=candidate_data,
-            recommended_positions=job_recommendations
-        )
+    offer_matches = await match_offers(
+        candidate_data=candidate_data,
+        recommended_positions=job_recommendations,
+        db=db
+    )
 
-        return {
-            "recommended_positions": job_recommendations,
-            "matched_offers": offer_matches
-        }
-
-    except Exception as e:
-        raise HTTPException(
-            status_code=500,
-            detail=f"Error en offer matcher: {str(e)}"
-        )
-
-
-@app.get(
-    "/candidate-summary/{candidate_id}",
-    response_model=CandidateSummary,
-    summary="Obtener el resumen de un candidato por ID",
-    responses={
-        200: {"description": "Resumen del candidato encontrado"},
-        404: {"model": ErrorResponse, "description": "Candidato no encontrado"}
+    return {
+        "recommended_positions": job_recommendations,
+        "matched_offers": offer_matches
     }
-)
-async def get_candidate_summary(candidate_id: str):
 
-    summary = candidate_summaries_db.get(candidate_id)
-    if not summary:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Candidato con ID '{candidate_id}' no encontrado."
-        )
-    return summary
+

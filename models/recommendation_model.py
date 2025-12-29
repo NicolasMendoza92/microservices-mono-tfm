@@ -3,8 +3,6 @@ from typing import List
 from schemas.cv import ExtractedCVData
 import json
 from pathlib import Path
-import unicodedata
-import re
 from utils.auxiliar import normalize
 
 CATALOG_PATH = Path("data/puestos_keywords.json")
