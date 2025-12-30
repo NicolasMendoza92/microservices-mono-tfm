@@ -1,0 +1,203 @@
+
+[
+  {
+    "id": "cand-1",
+    "name": "Juan Pérez",
+    "email": "juan.perez@mail.com",
+    "phone": "123456789",
+    "experience": [
+      { "title": "Limpiador", "company": "Empresa A", "years": 3 }
+    ],
+    "skills": ["limpieza", "responsabilidad", "trabajo en equipo"]
+  },
+  {
+    "id": "cand-2",
+    "name": "María Gómez",
+    "email": "maria.gomez@mail.com",
+    "phone": "987654321",
+    "experience": [
+      { "title": "Mozo de almacén", "company": "Logística SA", "years": 2 }
+    ],
+    "skills": ["almacén", "inventario", "orden"]
+  },
+  {
+    "id": "cand-3",
+    "name": "Carlos Ruiz",
+    "email": "carlos.ruiz@mail.com",
+    "phone": "555666777",
+    "experience": [
+      { "title": "Peón", "company": "Construcciones SRL", "years": 1 }
+    ],
+    "skills": ["esfuerzo físico", "puntualidad"]
+  },
+  {
+    "id": "cand-4",
+    "name": "Ana Torres",
+    "email": "ana.torres@mail.com",
+    "phone": "111222333",
+    "experience": [
+      { "title": "Cajera", "company": "Supermercados XYZ", "years": 4 }
+    ],
+    "skills": ["atención al cliente", "manejo de caja", "puntualidad"]
+  },
+  {
+    "id": "cand-5",
+    "name": "Luis Fernández",
+    "email": "luis.fernandez@mail.com",
+    "phone": "444555666",
+    "experience": [
+      { "title": "Repartidor", "company": "Mensajería Express", "years": 2 }
+    ],
+    "skills": ["conducción", "responsabilidad", "orientación"]
+  },
+  {
+    "id": "cand-6",
+    "name": "Sofía Martínez",
+    "email": "sofia.martinez@mail.com",
+    "phone": "777888999",
+    "experience": [
+      { "title": "Recepcionista", "company": "Hotel Sol", "years": 3 }
+    ],
+    "skills": ["comunicación", "organización", "trato amable"]
+  },
+  {
+    "id": "cand-7",
+    "name": "Pedro López",
+    "email": "pedro.lopez@mail.com",
+    "phone": "222333444",
+    "experience": [
+      { "title": "Operario", "company": "Fábrica Textil", "years": 5 }
+    ],
+    "skills": ["producción", "trabajo en equipo", "precisión"]
+  },
+  {
+    "id": "cand-8",
+    "name": "Laura Sánchez",
+    "email": "laura.sanchez@mail.com",
+    "phone": "333444555",
+    "experience": [
+      { "title": "Auxiliar de cocina", "company": "Restaurante Gourmet", "years": 2 }
+    ],
+    "skills": ["cocina básica", "orden", "higiene"]
+  },
+  {
+    "id": "cand-9",
+    "name": "Javier Morales",
+    "email": "javier.morales@mail.com",
+    "phone": "666777888",
+    "experience": [
+      { "title": "Conserje", "company": "Edificio Central", "years": 4 }
+    ],
+    "skills": ["mantenimiento", "atención", "responsabilidad"]
+  },
+  {
+    "id": "cand-10",
+    "name": "Patricia Vega",
+    "email": "patricia.vega@mail.com",
+    "phone": "999000111",
+    "experience": [
+      { "title": "Dependienta", "company": "Tienda Moda", "years": 3 }
+    ],
+    "skills": ["ventas", "trato al cliente", "organización"]
+  },
+  {
+    "id": "cand-11",
+    "name": "Andrés Castro",
+    "email": "andres.castro@mail.com",
+    "phone": "555444333",
+    "experience": [
+      { "title": "Jardinero", "company": "Parques y Jardines", "years": 6 }
+    ],
+    "skills": ["paisajismo", "cuidado de plantas", "puntualidad"]
+  },
+  {
+    "id": "cand-12",
+    "name": "Marta Herrera",
+    "email": "marta.herrera@mail.com",
+    "phone": "888999000",
+    "experience": [
+      { "title": "Auxiliar administrativa", "company": "Oficinas Global", "years": 2 }
+    ],
+    "skills": ["gestión documental", "informática básica", "organización"]
+  },
+  {
+    "id": "cand-13",
+    "name": "Diego Navarro",
+    "email": "diego.navarro@mail.com",
+    "phone": "123123123",
+    "experience": [
+      { "title": "Ayudante de obra", "company": "Construcciones Beta", "years": 1 }
+    ],
+    "skills": ["esfuerzo físico", "trabajo en equipo", "adaptabilidad"]
+  },
+  {
+    "id": "cand-14",
+    "name": "Isabel Romero",
+    "email": "isabel.romero@mail.com",
+    "phone": "321321321",
+    "experience": [
+      { "title": "Camarera", "company": "Bar Central", "years": 3 }
+    ],
+    "skills": ["servicio al cliente", "rapidez", "amabilidad"]
+  },
+  {
+    "id": "cand-15",
+    "name": "Fernando Díaz",
+    "email": "fernando.diaz@mail.com",
+    "phone": "654654654",
+    "experience": [
+      { "title": "Chofer", "company": "Transportes Seguros", "years": 4 }
+    ],
+    "skills": ["conducción segura", "responsabilidad", "orientación"]
+  },
+  {
+    "id": "cand-16",
+    "name": "Claudia Ramos",
+    "email": "claudia.ramos@mail.com",
+    "phone": "987987987",
+    "experience": [
+      { "title": "Auxiliar de limpieza", "company": "Servicios Limpios", "years": 5 }
+    ],
+    "skills": ["limpieza profunda", "detallista", "responsabilidad"]
+  },
+  {
+    "id": "cand-17",
+    "name": "Hugo Serrano",
+    "email": "hugo.serrano@mail.com",
+    "phone": "456456456",
+    "experience": [
+      { "title": "Operador de maquinaria", "company": "Industrias Alfa", "years": 3 }
+    ],
+    "skills": ["manejo de maquinaria", "seguridad", "precisión"]
+  },
+  {
+    "id": "cand-18",
+    "name": "Natalia Cruz",
+    "email": "natalia.cruz@mail.com",
+    "phone": "789789789",
+    "experience": [
+      { "title": "Recepcionista clínica", "company": "Salud Plus", "years": 2 }
+    ],
+    "skills": ["trato al paciente", "organización", "informática básica"]
+  },
+  {
+    "id": "cand-19",
+    "name": "Ricardo Ortega",
+    "email": "ricardo.ortega@mail.com",
+    "phone": "852852852",
+    "experience": [
+      { "title": "Mozo de carga", "company": "Almacenes Delta", "years": 3 }
+    ],
+    "skills": ["carga y descarga", "orden", "esfuerzo físico"]
+  },
+  {
+    "id": "cand-20",
+    "name": "Elena Paredes",
+    "email": "elena.paredes@mail.com",
+    "phone": "963963963",
+    "experience": [
+      { "title": "Auxiliar de geriatría", "company": "Residencia Luz", "years": 4 }
+    ],
+    "skills": ["cuidado de mayores", "empatía", "responsabilidad"]
+  }
+]

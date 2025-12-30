@@ -8,6 +8,7 @@ import datetime
 from config import add_cors_middleware
 from schemas.cv import ExtractedCVData, CandidateData
 from schemas.candidate import CandidateSummary, CVProcessedData
+from schemas.offer import OfferInput
 from fastapi import Depends
 from db.session import get_db
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -18,6 +19,8 @@ from models.recommendation_model import recommend_jobs
 from models.interview_prep import generate_interview_questions 
 from models.cv_summarizer import summarize_cv
 from models.offers.matcher import match_offers
+from models.candidate.matcher import match_candidates_from_offer
+from models.candidate.loader import load_candidates
 
 app = FastAPI(
     title="T3 Chat - API de Inclusión Laboral",
@@ -162,15 +165,55 @@ async def offer_matcher(
 ):
     job_recommendations = await recommend_jobs(candidate_data)
 
-    offer_matches = await match_offers(
+    matched_offers = await match_offers(
         candidate_data=candidate_data,
         recommended_positions=job_recommendations,
         db=db
     )
 
-    return {
-        "recommended_positions": job_recommendations,
-        "matched_offers": offer_matches
+    total_offers = len(matched_offers)
+    best_score = max(
+        (o["score"] for o in matched_offers),
+        default=0
+    )
+
+    response = {
+        "summary": {
+            "total_offers": total_offers,
+            "matched_offers": total_offers,
+            "best_match_score": best_score
+        },
+        "offers": [
+            {
+                "id": o["offer_id"],
+                "puesto": o["puesto"],
+                "empresa": o["empresa"],
+                "match_percentage": o["score"],
+                "reasons": o["reasons"]
+            }
+            for o in matched_offers
+        ]
     }
 
+    return response
 
+@app.post("/candidate-matcher")
+async def candidate_matcher(
+    offer: OfferInput,
+    db: AsyncSession = Depends(get_db)
+):
+    candidates = await load_candidates(db)
+
+    matches = match_candidates_from_offer(
+        offer=offer.model_dump(),
+        candidates=candidates
+    )
+
+    return {
+        "summary": {
+            "total_candidates": len(candidates),
+            "matched_candidates": len(matches),
+            "best_match_score": matches[0]["match_percentage"] if matches else 0
+        },
+        "candidates": matches
+    }
