@@ -54,6 +54,9 @@ async def read_root():
 
 async def extract_cv_data_endpoint(file: UploadFile = File(...)):
     candidate_id = str(uuid4()) 
+    print(f"🔍 FILE RECEIVED: filename='{file.filename}'")
+    print(f"🔍 FILE SIZE: {file.size} bytes")
+    print(f"🔍 FILE CONTENT_TYPE: {file.content_type}")
 
     if not file.filename:
         raise HTTPException(
