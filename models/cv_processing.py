@@ -6,6 +6,7 @@ from docx import Document
 from transformers import pipeline
 from typing import List, Optional, Dict, Any
 import re
+from functools import lru_cache 
 import logging
 from schemas.cv import ExtractedCVData, ExperienceItem, EducationItem, LanguageItem
 from utils.auxiliar import (
@@ -28,9 +29,23 @@ logger = logging.getLogger(__name__)
 
 # --- Cargar el modelo de Hugging Face para NER ---
 NER_MODEL_NAME = "dccuchile/bert-base-spanish-wwm-uncased-finetuned-ner"
-ner_pipeline = pipeline(
-    "ner", model=NER_MODEL_NAME, tokenizer=NER_MODEL_NAME, aggregation_strategy="simple"
-)
+# ner_pipeline = pipeline(
+#     "ner", model=NER_MODEL_NAME, tokenizer=NER_MODEL_NAME, aggregation_strategy="simple"
+# )
+
+# --- LAZY LOADER: solo se carga en el PRIMER request ---
+@lru_cache(maxsize=1)  # ← Caché para cargar UNA SOLA VEZ
+def get_ner_pipeline():
+    """Lazy loader del modelo NER - se carga solo en el primer uso"""
+    logger.info("🔄 Cargando modelo NER por primera vez...")
+    ner_pipeline = pipeline(
+        "ner", 
+        model=NER_MODEL_NAME, 
+        tokenizer=NER_MODEL_NAME, 
+        aggregation_strategy="simple"
+    )
+    logger.info("✅ Modelo NER cargado exitosamente")
+    return ner_pipeline
 
 
 # --- Funciones de extracción de texto (sin cambios si ya funcionan bien) ---
@@ -541,6 +556,7 @@ async def extract_cv_data_from_text(
     clean_text = re.sub(r"[ \t]+", " ", clean_text)
     logger.info(f"TEXTO LIMPIO (primeros 500 chars): \n {clean_text}")
 
+    ner_pipeline = get_ner_pipeline()
     ner_results = ner_pipeline(raw_text)
 
     # Llamadas a las funciones modulares
