@@ -28,7 +28,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # --- Cargar el modelo de Hugging Face para NER ---
-NER_MODEL_NAME = "dccuchile/bert-base-spanish-wwm-uncased-finetuned-ner"
+MODELO_PESADO = "dccuchile/bert-base-spanish-wwm-uncased-finetuned-ner"
+NER_MODEL_NAME = "mrm8488/TinyBERT-spanish-uncased-finetuned-ner"
 # ner_pipeline = pipeline(
 #     "ner", model=NER_MODEL_NAME, tokenizer=NER_MODEL_NAME, aggregation_strategy="simple"
 # )
@@ -84,6 +85,16 @@ def extract_name(
     raw_text: str, file_name: str, ner_results: List[Dict[str, Any]]
 ) -> Optional[str]:
     name: Optional[str] = None
+    
+    # 0. PRIORIDAD ABSOLUTA: "NOMBRE:"
+    explicit_name_match = re.search(
+        r"(?i)\bnombre\s*:\s*([A-ZÁÉÍÓÚÑ][A-Za-zÁÉÍÓÚÑáéíóúñ\s]{5,})",
+        raw_text
+    )
+    if explicit_name_match:
+        candidate = explicit_name_match.group(1).strip()
+        if 2 <= len(candidate.split()) <= 5:
+            return candidate.title()
 
     # 1. Prioridad: Primeras líneas del documento con regex
     first_lines = raw_text.split("\n")[:5]
@@ -146,14 +157,18 @@ def extract_email(raw_text: str) -> Optional[str]:
 
 
 def extract_phone(raw_text: str) -> Optional[str]:
-    phone_match = re.search(
-        r"(\+?\d{1,4}[-.\s]?)?(\(?\d{2,}\)?[-.\s]?\d{3,4}[-.\s]?\d{4})", raw_text
+    explicit = re.search(
+        r"(?i)\btel[eé]fono\s*:\s*([\d\s+-]{7,})",
+        raw_text
     )
-    if phone_match:
-        phone = phone_match.group(0).strip()
-        phone = re.sub(r"[\s.-]", "", phone)
-        return phone
-    return None
+    if explicit:
+        return re.sub(r"\D", "", explicit.group(1))
+
+    generic = re.search(
+        r"(\+?\d{1,3})?\s?\d{3}\s?\d{3}\s?\d{3}",
+        raw_text
+    )
+    return re.sub(r"\D", "", generic.group(0)) if generic else None
 
 
 def extract_skills(raw_text: str) -> List[str]:
@@ -162,7 +177,6 @@ def extract_skills(raw_text: str) -> List[str]:
         if re.search(r"\b" + re.escape(skill_keyword) + r"\b", raw_text, re.IGNORECASE):
             detected_skills.append(skill_keyword)
     return list(set(detected_skills))
-
 
 def extract_experience(raw_text: str) -> List[ExperienceItem]:
     simplified_experience: List[ExperienceItem] = []
@@ -234,7 +248,6 @@ def extract_experience(raw_text: str) -> List[ExperienceItem]:
                 )
 
     return simplified_experience
-
 
 def extract_education(raw_text: str) -> List[EducationItem]:
     categorized_education: List[EducationItem] = []
@@ -557,20 +570,20 @@ async def extract_cv_data_from_text(
     logger.info(f"TEXTO LIMPIO (primeros 500 chars): \n {clean_text}")
 
     ner_pipeline = get_ner_pipeline()
-    ner_results = ner_pipeline(raw_text)
+    ner_results = ner_pipeline(clean_text)
 
     # Llamadas a las funciones modulares
-    name = extract_name(raw_text, file_name, ner_results)
-    email = extract_email(raw_text)
-    phone = extract_phone(raw_text)
-    skills = extract_skills(raw_text)
+    name = extract_name(clean_text, file_name, ner_results)
+    email = extract_email(clean_text)
+    phone = extract_phone(clean_text)
+    skills = extract_skills(clean_text)
 
     # ¡Ahora llamamos a las funciones separadas!
-    experience = extract_experience(raw_text)
-    education = extract_education(raw_text)
+    experience = extract_experience(clean_text)
+    education = extract_education(clean_text)
 
-    languages = extract_languages(raw_text)
-    summary = extract_summary(raw_text)
+    languages = extract_languages(clean_text)
+    summary = extract_summary(clean_text)
 
     # Construir el objeto ExtractedCVData
     extracted_data = ExtractedCVData(

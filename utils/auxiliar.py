@@ -43,7 +43,7 @@ DATE_SINGLE_POINT_REGEX = re.compile(DATE_SINGLE_POINT_PATTERN, re.VERBOSE | re.
 DATE_RANGE_REGEX = re.compile(DATE_RANGE_PATTERN, re.VERBOSE | re.IGNORECASE)
 
 def parse_dates(date_str: str) -> Tuple[int | None, int | None]:
-    date_str = date_str.strip().lower()
+    date_str = unicodedata.normalize("NFKD", date_str.lower().strip())
     current_year = datetime.datetime.now().year
 
     # Primer intento: buscar un rango de fechas
