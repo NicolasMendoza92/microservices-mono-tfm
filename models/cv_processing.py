@@ -1,6 +1,5 @@
 import os
-
-# import fitz
+from huggingface_hub import InferenceClient
 import pdfplumber
 from docx import Document
 from transformers import pipeline
@@ -28,25 +27,23 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # --- Cargar el modelo de Hugging Face para NER ---
-MODELO_PESADO = "dccuchile/bert-base-spanish-wwm-uncased-finetuned-ner"
-NER_MODEL_NAME = "mrm8488/TinyBERT-spanish-uncased-finetuned-ner"
-# ner_pipeline = pipeline(
-#     "ner", model=NER_MODEL_NAME, tokenizer=NER_MODEL_NAME, aggregation_strategy="simple"
-# )
+NER_MODEL_NAME = "mrm8488/bert-spanish-cased-finetuned-ner"
 
 # --- LAZY LOADER: solo se carga en el PRIMER request ---
 @lru_cache(maxsize=1)  # ← Caché para cargar UNA SOLA VEZ
-def get_ner_pipeline():
-    """Lazy loader del modelo NER - se carga solo en el primer uso"""
-    logger.info("🔄 Cargando modelo NER por primera vez...")
-    ner_pipeline = pipeline(
-        "ner", 
-        model=NER_MODEL_NAME, 
-        tokenizer=NER_MODEL_NAME, 
-        aggregation_strategy="simple"
+def get_hf_client() -> InferenceClient:
+    """Cliente de Hugging Face Inference API - se crea solo una vez."""
+    token = os.getenv("HF_API_TOKEN")
+    if not token:
+        raise RuntimeError("HF_API_TOKEN no está definida en las variables de entorno.")
+    
+    logger.info("🔄 Creando cliente HF Inference API...")
+    client = InferenceClient(
+        model=NER_MODEL_NAME,
+        token=token,
     )
-    logger.info("✅ Modelo NER cargado exitosamente")
-    return ner_pipeline
+    logger.info("✅ Cliente HF creado exitosamente")
+    return client
 
 
 # --- Funciones de extracción de texto (sin cambios si ya funcionan bien) ---
@@ -78,6 +75,37 @@ async def extract_text_from_file(file_path: str) -> str:
         raise ValueError(f"Formato de archivo no soportado: {file_extension}")
 
     return text
+
+def ner_via_hf(text: str):
+    """
+    Llama al modelo NER vía Hugging Face Inference API.
+    Devuelve el mismo formato que pipeline("ner").
+    """
+    client = get_hf_client()
+    
+    try:
+        logger.info(f"📤 Enviando texto a HF (longitud: {len(text)} chars)...")
+        # Llama al modelo con el texto
+        raw_entities = client.token_classification(
+            text,
+            aggregation_strategy="simple",  
+        )
+        logger.info(f"✅ NER completado: {len(raw_entities)} entidades encontradas")
+        return raw_entities
+        
+    except Exception as e:
+        # Log COMPLETO del error para debuggear
+        error_msg = f"Error en HF Inference API: {type(e).__name__}: {str(e)}"
+        logger.error(error_msg)
+        logger.error(f"   Texto enviado (primeros 200 chars): {text[:200]}...")
+        
+        # Errores comunes de HF:
+        if "Model is currently loading" in str(e):
+            raise RuntimeError("Modelo HF está cargándose, espera 1-2 min y reintenta.")
+        elif "Not Found" in str(e):
+            raise RuntimeError(f"Modelo no encontrado: {NER_MODEL_NAME}")
+        else:
+            raise RuntimeError(f"Error al procesar NER: {str(e)}")
 
 
 # --- Nuevas funciones para la extracción modular ---
@@ -562,15 +590,16 @@ def extract_summary(raw_text: str) -> Optional[str]:
 async def extract_cv_data_from_text(
     raw_text: str, file_id: str, file_name: str
 ) -> ExtractedCVData:
-    # logger.info("--- RAW TEXT ---")
-    # logger.info(raw_text)
 
     clean_text = re.sub(r"\s*\n\s*", "\n", raw_text.strip())
     clean_text = re.sub(r"[ \t]+", " ", clean_text)
     logger.info(f"TEXTO LIMPIO (primeros 500 chars): \n {clean_text}")
 
-    ner_pipeline = get_ner_pipeline()
-    ner_results = ner_pipeline(clean_text)
+    # ner_pipeline = get_ner_pipeline()
+    # ner_results = ner_pipeline(clean_text)
+    
+    # SE CABIÓ AQUI PARA USAR HF INFERENCE API
+    ner_results = ner_via_hf(clean_text)
 
     # Llamadas a las funciones modulares
     name = extract_name(clean_text, file_name, ner_results)

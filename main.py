@@ -2,7 +2,6 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException, status
 from typing import Dict
 from uuid import uuid4
-from pydantic import BaseModel
 import os
 import datetime
 from config import add_cors_middleware
@@ -17,7 +16,6 @@ from models.cv_processing import extract_text_from_file, extract_cv_data_from_te
 from models.employability_model import predict_employability
 from models.recommendation_model import recommend_jobs
 from models.interview_prep import generate_interview_questions 
-from models.cv_summarizer import summarize_cv
 from models.offers.matcher import match_offers
 from models.candidate.matcher import match_candidates_from_offer
 from models.candidate.loader import load_candidates
@@ -146,16 +144,6 @@ async def process_candidate_data_endpoint(candidate_data: CandidateData):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error interno del servidor al procesar los datos: {e}"
         )
-
-
-class SummarizeRequest(BaseModel):
-    raw_text: str
-
-@app.post("/summarize-cv") 
-def summarize_endpoint(req: SummarizeRequest):
-    print(f'Received summarize request for text length: {len(req.raw_text)}')  # Corregí len()
-    summary = summarize_cv(req.raw_text)
-    return {"summary": summary}
 
 
 @app.post("/offer-matcher")
