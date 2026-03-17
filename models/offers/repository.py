@@ -5,6 +5,7 @@ from models.offers.model import Offer
 
 async def get_active_offers(db: AsyncSession):
     today = date.today()
+    print(f"[get_active_offers] Buscando ofertas activas para fecha: {today}")
 
     result = await db.execute(
         select(Offer).where(
@@ -14,4 +15,6 @@ async def get_active_offers(db: AsyncSession):
         )
     )
 
-    return result.scalars().all()
+    offers = result.scalars().all()
+    print(f"[get_active_offers] Total encontradas: {len(offers)}")
+    return offers

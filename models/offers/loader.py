@@ -10,15 +10,11 @@ OFFERS_PATH = Path("data/ofertas_activas.json")
 print(f'seleccionada {OFFERS_SOURCE}')
 
 async def load_offers(db: AsyncSession | None = None) -> List:
-    if OFFERS_SOURCE == "json":
-        with open(OFFERS_PATH, "r", encoding="utf-8") as f:
-            all_offers = json.load(f)
-
-        return [o for o in all_offers if o.get("activo") is True]
-
     if OFFERS_SOURCE == "db":
         if db is None:
             raise ValueError("DB session requerida cuando OFFERS_SOURCE='db'")
-        return await get_active_offers(db)
-
-    raise ValueError(f"OFFERS_SOURCE inválido: {OFFERS_SOURCE}")
+        
+        offers = await get_active_offers(db)
+        print(f"[load_offers] Ofertas traídas de DB: {len(offers)}")
+        print(f"[load_offers] Primera oferta: {offers[0] if offers else 'NINGUNA'}")
+        return offers

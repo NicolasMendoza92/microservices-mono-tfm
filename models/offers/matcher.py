@@ -26,41 +26,46 @@ async def match_offers(
     offers = await load_offers(db)
     results = []
 
-    exp_titles = [normalize(exp.title) for exp in candidate_data.experience]
-    skills = [normalize(skill) for skill in candidate_data.skills]
+    # Normalizar recomendaciones UNA sola vez
+    recommended_norm = [normalize(p) for p in recommended_positions]
 
+    exp_titles = [normalize(exp.title) for exp in candidate_data.experience if exp.title]
+    skills = [normalize(skill) for skill in candidate_data.skills if skill]
     exp_text = " ".join(exp_titles)
-    skills_text = " ".join(skills)
+    print("OFFERSSSSSSSSSSS", offers)
 
     for offer in offers:
-        # Unificar acceso
         is_dict = isinstance(offer, dict)
 
-        puesto = offer["puesto"] if is_dict else offer.puesto
-        categoria = offer["categoria"] if is_dict else offer.categoria
-        empresa = offer["empresa"] if is_dict else offer.empresa
+        puesto      = offer["puesto"]      if is_dict else offer.puesto
+        categoria   = offer["categoria"]   if is_dict else offer.categoria
+        empresa     = offer["empresa"]     if is_dict else offer.empresa
         descripcion = offer.get("descripcion") if is_dict else offer.descripcion
-        offer_id = offer["id"] if is_dict else offer.id
+        offer_id    = offer["id"]          if is_dict else offer.id
+
+        puesto_norm = normalize(puesto)  # 👈 normalizar el puesto de la BD
 
         score = 0
         reasons = []
 
-        if puesto in recommended_positions:
+        # 1. Puesto recomendado ✅ comparación normalizada
+        if puesto_norm in recommended_norm:
             score += 40
             reasons.append("Puesto recomendado para el candidato")
 
-        if text_contains_any(exp_text, normalize(puesto).split()):
+        # 2. Experiencia relacionada
+        if text_contains_any(exp_text, puesto_norm.split()):
             score += 30
             reasons.append("Experiencia previa relacionada")
 
-        if descripcion and text_contains_any(
-            normalize(descripcion),
-            skills_text
-        ):
-            score += 20
-            reasons.append("Habilidades coincidentes")
+        # 3. Skills en descripción
+        if descripcion and skills:
+            if text_contains_any(normalize(descripcion), skills):
+                score += 20
+                reasons.append("Habilidades coincidentes")
 
-        if categoria and normalize(categoria) in exp_text:
+        # 4. Categoría compatible
+        if categoria and text_contains_any(exp_text, normalize(categoria).split()):
             score += 10
             reasons.append("Categoría compatible")
 

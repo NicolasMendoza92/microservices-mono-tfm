@@ -19,6 +19,7 @@ from models.interview_prep import generate_interview_questions
 from models.offers.matcher import match_offers
 from models.candidate.matcher import match_candidates_from_offer
 from models.candidate.loader import load_candidates
+from models.offers.model import Offer, OfferMatcherResponse, OfferMatcherSummary, OfferMatch
 
 app = FastAPI(
     title="T3 Chat - API de Inclusión Laboral",
@@ -146,44 +147,71 @@ async def process_candidate_data_endpoint(candidate_data: CandidateData):
         )
 
 
-@app.post("/offer-matcher")
+@app.post(
+    "/offer-matcher",
+    response_model=OfferMatcherResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Busca ofertas compatibles con el perfil de un candidato",
+    responses={
+        400: {"description": "Datos del candidato insuficientes"},
+        500: {"description": "Error interno al procesar el matching"},
+    }
+)
 async def offer_matcher(
     candidate_data: ExtractedCVData,
     db: AsyncSession = Depends(get_db)
-):
-    job_recommendations = await recommend_jobs(candidate_data)
+) -> OfferMatcherResponse:
 
-    matched_offers = await match_offers(
-        candidate_data=candidate_data,
-        recommended_positions=job_recommendations,
-        db=db
-    )
+    # Validación mínima: sin experiencia ni skills no hay matching útil
+    if not candidate_data.experience and not candidate_data.skills:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="El candidato debe tener al menos experiencia o habilidades para buscar ofertas."
+        )
+    print("SKILLS:", candidate_data.skills)
+    print("EXPERIENCE:", candidate_data.experience)
 
-    total_offers = len(matched_offers)
-    best_score = max(
-        (o["score"] for o in matched_offers),
-        default=0
-    )
+    try:
+        job_recommendations = await recommend_jobs(candidate_data)
+        print("RECOMENDACIONES:", job_recommendations)
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error al generar recomendaciones de puestos: {e}"
+        )
 
-    response = {
-        "summary": {
-            "total_offers": total_offers,
-            "matched_offers": total_offers,
-            "best_match_score": best_score
-        },
-        "offers": [
-            {
-                "id": o["offer_id"],
-                "puesto": o["puesto"],
-                "empresa": o["empresa"],
-                "match_percentage": o["score"],
-                "reasons": o["reasons"]
-            }
+    try:
+        matched_offers = await match_offers(
+            candidate_data=candidate_data,
+            recommended_positions=job_recommendations,
+            db=db
+        )
+        print("MATCHES:", len(matched_offers))
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error al buscar ofertas compatibles: {e}"
+        )
+
+    best_score = matched_offers[0]["score"] if matched_offers else 0
+
+    return OfferMatcherResponse(
+        summary=OfferMatcherSummary(
+            total_offers=len(matched_offers),
+            matched_offers=len(matched_offers),
+            best_match_score=best_score,
+        ),
+        offers=[
+            OfferMatch(
+                id=o["offer_id"],
+                puesto=o["puesto"],
+                empresa=o["empresa"],
+                match_percentage=o["score"],
+                reasons=o["reasons"],
+            )
             for o in matched_offers
         ]
-    }
-
-    return response
+    )
 
 @app.post("/candidate-matcher")
 async def candidate_matcher(
